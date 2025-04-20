@@ -1,8 +1,11 @@
 # Use an official Node.js image
-FROM node:20-alpine
+FROM ghcr.io/puppeteer/puppeteer:latest
 
 # Set working directory
 WORKDIR /app
+
+# Because the puppeteer image changes the user, for some reason:
+USER root
 
 RUN corepack enable yarn
 
