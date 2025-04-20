@@ -2,7 +2,8 @@
   "name": "kleinanzeigen-crawler",
   "packageManager": "yarn@4.2.2",
   "devDependencies": {
-    "prettier": "^3.5.3"
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "nodemailer": "^6.10.1",

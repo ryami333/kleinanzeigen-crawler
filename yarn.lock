@@ -586,6 +586,7 @@ __metadata:
     prettier: "npm:^3.5.3"
     puppeteer: "npm:^24.6.1"
     redis: "npm:^4.7.0"
+    typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
 
@@ -941,6 +942,26 @@ __metadata:
   version: 2.12.0
   resolution: "typed-query-selector@npm:2.12.0"
   checksum: 10c0/069509887ecfff824a470f5f93d300cc9223cb059a36c47ac685f2812c4c9470340e07615893765e4264cef1678507532fa78f642fd52f276b589f7f5d791f79
+  languageName: node
+  linkType: hard
+
+"typescript@npm:^5.8.3":
+  version: 5.8.3
+  resolution: "typescript@npm:5.8.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/5f8bb01196e542e64d44db3d16ee0e4063ce4f3e3966df6005f2588e86d91c03e1fb131c2581baf0fb65ee79669eea6e161cd448178986587e9f6844446dbb48
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A^5.8.3#optional!builtin<compat/typescript>":
+  version: 5.8.3
+  resolution: "typescript@patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=b45daf"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/92ea03509e06598948559ddcdd8a4ae5a7ab475766d5589f1b796f5731b3d631a4c7ddfb86a3bd44d58d10102b132cd4b4994dda9b63e6273c66d77d6a271dbd
   languageName: node
   linkType: hard
 
