@@ -5,6 +5,8 @@
 
   "compilerOptions": {
     "lib": ["es2023"],
+    "allowJs": true,
+    "checkJs": true,
     "module": "nodenext",
     "target": "es2022",
     "strict": true,
