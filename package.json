@@ -5,6 +5,7 @@
     "prettier": "^3.5.3"
   },
   "dependencies": {
-    "nodemailer": "^6.10.1"
+    "nodemailer": "^6.10.1",
+    "redis": "^4.7.0"
   }
 }
