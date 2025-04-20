@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "nodemailer": "^6.10.1",
+    "puppeteer": "^24.6.1",
     "redis": "^4.7.0"
   }
 }
