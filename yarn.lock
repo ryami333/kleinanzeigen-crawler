@@ -222,6 +222,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/nodemailer@npm:^6.4.17":
+  version: 6.4.17
+  resolution: "@types/nodemailer@npm:6.4.17"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10c0/689abb3005cf36cf89c2abe56f0aa4469a37e0814633a73fbeb35732e856f4b0d7ab32b6d91585038b6941f5b70db58ec2bd147ebe9f73e528eb6c99604f4e82
+  languageName: node
+  linkType: hard
+
 "@types/yauzl@npm:^2.9.1":
   version: 2.10.3
   resolution: "@types/yauzl@npm:2.10.3"
@@ -971,6 +980,7 @@ __metadata:
   resolution: "kleinanzeigen-crawler@workspace:."
   dependencies:
     "@types/bull": "npm:^4.10.4"
+    "@types/nodemailer": "npm:^6.4.17"
     bull: "npm:^4.16.5"
     nodemailer: "npm:^6.10.1"
     prettier: "npm:^3.5.3"

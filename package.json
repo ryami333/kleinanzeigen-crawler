@@ -3,6 +3,7 @@
   "packageManager": "yarn@4.2.2",
   "devDependencies": {
     "@types/bull": "^4.10.4",
+    "@types/nodemailer": "^6.4.17",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3"
   },
