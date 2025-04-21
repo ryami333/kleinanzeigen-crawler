@@ -8,6 +8,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@ghostery/adblocker-puppeteer": "^2.5.1",
     "bull": "^4.16.5",
     "dotenv": "^16.5.0",
     "nodemailer": "^6.10.1",
