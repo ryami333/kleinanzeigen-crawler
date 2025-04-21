@@ -4,6 +4,8 @@ services:
   redis:
     image: redis:latest
     container_name: redis
+    volumes:
+      - redis-data:/data
     ports:
       - "6379:6379"
     # No ports exposed to host
