@@ -287,6 +287,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@t3-oss/env-core@npm:^0.12.0":
+  version: 0.12.0
+  resolution: "@t3-oss/env-core@npm:0.12.0"
+  peerDependencies:
+    typescript: ">=5.0.0"
+    valibot: ^1.0.0-beta.7 || ^1.0.0
+    zod: ^3.24.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+    valibot:
+      optional: true
+    zod:
+      optional: true
+  checksum: 10c0/b79d2c291b8996b008ef77fa9b3afb8fd7c4c59e271b65039a52a504a9cdb7492ec88b414e6b5691dc4c2c93077abfac85a5cea00dcfdd083ad94912efc5464b
+  languageName: node
+  linkType: hard
+
 "@tootallnate/quickjs-emscripten@npm:^0.23.0":
   version: 0.23.0
   resolution: "@tootallnate/quickjs-emscripten@npm:0.23.0"
@@ -1077,6 +1095,7 @@ __metadata:
   resolution: "kleinanzeigen-crawler@workspace:."
   dependencies:
     "@ghostery/adblocker-puppeteer": "npm:^2.5.1"
+    "@t3-oss/env-core": "npm:^0.12.0"
     "@types/bull": "npm:^4.10.4"
     "@types/nodemailer": "npm:^6.4.17"
     bull: "npm:^4.16.5"
@@ -1086,6 +1105,7 @@ __metadata:
     puppeteer: "npm:^24.6.1"
     redis: "npm:^4.7.0"
     typescript: "npm:^5.8.3"
+    zod: "npm:^3.24.3"
   languageName: unknown
   linkType: soft
 
@@ -2043,7 +2063,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.24.1":
+"zod@npm:^3.24.1, zod@npm:^3.24.3":
   version: 3.24.3
   resolution: "zod@npm:3.24.3"
   checksum: 10c0/ab0369810968d0329a1a141e9418e01e5c9c2a4905cbb7cb7f5a131d6e9487596e1400e21eeff24c4a8ee28dacfa5bd6103893765c055b7a98c2006a5a4fc68d
