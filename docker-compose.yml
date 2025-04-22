@@ -25,7 +25,12 @@ services:
       REDIS_PORT: 6379
     networks:
       - crawler-net
+    secrets:
+      - GMAIL_PASS
 
 networks:
   crawler-net:
     driver: bridge
+secrets:
+  GMAIL_PASS:
+    file: ./secrets/GMAIL_PASS
