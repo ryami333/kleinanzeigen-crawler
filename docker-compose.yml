@@ -22,6 +22,22 @@ services:
       - crawler-net
     secrets:
       - GMAIL_PASS
+    command: node ./lib/crawler.mjs
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    depends_on:
+      - redis
+    ports:
+      - "5555:5555"
+    environment:
+      TZ: "Europe/Berlin"
+    networks:
+      - crawler-net
+    command: node ./lib/web.mjs
 
 networks:
   crawler-net:
