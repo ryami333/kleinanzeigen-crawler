@@ -19,12 +19,15 @@ services:
       REDIS_PORT: 6379
       TZ: "Europe/Berlin"
       PORT: 5555
+      GMAIL_PASS_FILE: /run/secrets/GMAIL_PASS
+      AUTH_SECRET_FILE: /run/secrets/AUTH_SECRET
     ports:
       - "5555:5555"
     networks:
       - crawler-net
     secrets:
       - GMAIL_PASS
+      - AUTH_SECRET
     command: node ./lib/main.mjs
 
 networks:
@@ -33,3 +36,5 @@ networks:
 secrets:
   GMAIL_PASS:
     file: ./secrets/GMAIL_PASS
+  AUTH_SECRET:
+    file: ./secrets/AUTH_SECRET
