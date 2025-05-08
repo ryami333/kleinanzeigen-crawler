@@ -1,19 +1,9 @@
 services:
-  redis:
-    image: redis:latest
-    volumes:
-      - ./redis-data:/data
-    # No ports exposed to host
-    networks:
-      - crawler-net
-
   kleinanzeigen-crawler:
     build:
       context: .
       dockerfile: Dockerfile
     env_file: .env
-    depends_on:
-      - redis
     environment:
       REDIS_HOST: redis
       REDIS_PORT: 6379
@@ -23,15 +13,11 @@ services:
       AUTH_SECRET_FILE: /run/secrets/AUTH_SECRET
     ports:
       - "5555:5555"
-    networks:
-      - crawler-net
+    volumes:
+      - ./redis-data:/data
     secrets:
       - GMAIL_PASS
       - AUTH_SECRET
-
-networks:
-  crawler-net:
-    driver: bridge
 secrets:
   GMAIL_PASS:
     file: ./secrets/GMAIL_PASS
