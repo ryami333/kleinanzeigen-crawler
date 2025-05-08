@@ -17,6 +17,8 @@ COPY package.json .yarnrc.yml yarn.lock ./
 # Install dependencies with Yarn
 RUN yarn install --immutable
 
+VOLUME /data
+
 EXPOSE 6379
 
 # Copy the rest of the app (including crawler.mjs)
@@ -24,6 +26,6 @@ ADD lib ./lib
 
 ENV TZ=Europe/Berlin
 
-ENTRYPOINT ["/bin/sh", "-c", "redis-server --port 6379 & exec \"$@\"", "--"]
+ENTRYPOINT ["/bin/sh", "-c", "redis-server --port 6379 --dir /data & exec \"$@\"", "--"]
 
 CMD ["node", "./lib/main.mjs"]
