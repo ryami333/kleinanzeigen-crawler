@@ -28,7 +28,6 @@ services:
     secrets:
       - GMAIL_PASS
       - AUTH_SECRET
-    command: node ./lib/main.mjs
 
 networks:
   crawler-net:

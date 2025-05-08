@@ -15,6 +15,4 @@ RUN yarn install --immutable
 # Copy the rest of the app (including crawler.mjs)
 ADD lib ./lib
 
-# Set the command to run the crawler script in `docker-compose.yml`, either:
-# - node ./lib/web.mjs
-# - node ./lib/crawler.mjs
+CMD ["node", "./lib/main.mjs"]
