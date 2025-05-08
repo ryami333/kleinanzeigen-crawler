@@ -5,9 +5,6 @@ services:
       dockerfile: Dockerfile
     env_file: .env
     environment:
-      REDIS_PORT: 6379
-      TZ: "Europe/Berlin"
-      PORT: 5555
       GMAIL_PASS_FILE: /run/secrets/GMAIL_PASS
       AUTH_SECRET_FILE: /run/secrets/AUTH_SECRET
     ports:
