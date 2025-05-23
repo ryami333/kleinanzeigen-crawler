@@ -12,6 +12,7 @@ export default async function Page() {
       {currentValue
         .split("\n")
         .map((input) => input.trim())
+        .toSorted((a, b) => a.localeCompare(b))
         .map((query, index) => (
           <ListItem key={index}>
             <Anchor
