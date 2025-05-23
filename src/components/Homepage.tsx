@@ -2,6 +2,7 @@
 
 import { useTransition } from "react";
 import { submitQueryAction } from "../helpers/submitQueryAction";
+import { Button } from "@mantine/core";
 
 export const Homepage = ({ currentValue }: { currentValue: string }) => {
   const [isSubmitting, startTransition] = useTransition();
@@ -35,9 +36,9 @@ export const Homepage = ({ currentValue }: { currentValue: string }) => {
           defaultValue={currentValue ?? undefined}
           style={{ flex: "1 auto" }}
         />
-        <button type="submit" disabled={isSubmitting}>
+        <Button type="submit" disabled={isSubmitting} fullWidth>
           Submit
-        </button>
+        </Button>
       </form>
     </>
   );
