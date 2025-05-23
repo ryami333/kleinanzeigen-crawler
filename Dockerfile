@@ -20,5 +20,5 @@ RUN yarn next build
 ENV TZ=Europe/Berlin
 
 # Deliberately no CMD - one instance needs to run `node ./lib/worker.mjs` and 
-# the other needs to run `yarn start`.
+# the other needs to run `yarn next start`.
 

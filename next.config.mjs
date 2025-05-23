@@ -32,7 +32,6 @@ const nextConfig = {
   },
   poweredByHeader: false,
   cleanDistDir: true,
-  output: "standalone",
 };
 
 export default nextConfig;
