@@ -2,7 +2,7 @@
 
 import { useTransition } from "react";
 import { submitQueryAction } from "../helpers/submitQueryAction";
-import { Button } from "@mantine/core";
+import { Button, Textarea, Text, Stack } from "@mantine/core";
 import { notifications } from "@mantine/notifications";
 
 export const Homepage = ({ currentValue }: { currentValue: string }) => {
@@ -35,8 +35,10 @@ export const Homepage = ({ currentValue }: { currentValue: string }) => {
   };
 
   return (
-    <>
-      <p>Please use lower-case alphanumeric queries, separated by newlines.</p>
+    <Stack>
+      <Text>
+        Please use lower-case alphanumeric queries, separated by newlines.
+      </Text>
       <form
         onSubmit={onSubmit}
         style={{
@@ -45,7 +47,7 @@ export const Homepage = ({ currentValue }: { currentValue: string }) => {
           rowGap: "0.5em",
         }}
       >
-        <textarea
+        <Textarea
           name="query"
           rows={10}
           defaultValue={currentValue ?? undefined}
@@ -55,6 +57,6 @@ export const Homepage = ({ currentValue }: { currentValue: string }) => {
           Submit
         </Button>
       </form>
-    </>
+    </Stack>
   );
 };
