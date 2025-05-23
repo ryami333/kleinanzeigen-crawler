@@ -4,16 +4,17 @@ import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
 
 import {
-  Anchor,
   AppShell,
   Burger,
   Container,
   Group,
   MantineProvider,
+  NavLink,
   Title,
 } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
 import { useDisclosure } from "@mantine/hooks";
+import { IconAdjustments } from "@tabler/icons-react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [opened, { toggle }] = useDisclosure();
@@ -53,7 +54,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </Group>
             </AppShell.Header>
             <AppShell.Navbar p="md">
-              <Anchor href="/">Settings</Anchor>
+              <NavLink
+                href="/"
+                label="Settings"
+                leftSection={<IconAdjustments size={16} stroke={1.5} />}
+              />
             </AppShell.Navbar>
             <AppShell.Main>
               <Container size="lg">{children}</Container>
