@@ -1,8 +1,25 @@
 services:
-  kleinanzeigen-crawler:
+  worker:
     build:
       context: .
       dockerfile: Dockerfile
+    command: yarn start
+    env_file: .env
+    environment:
+      GMAIL_PASS_FILE: /run/secrets/GMAIL_PASS
+      AUTH_SECRET_FILE: /run/secrets/AUTH_SECRET
+    ports:
+      - "5555:5555"
+    volumes:
+      - ./redis-data:/data
+    secrets:
+      - GMAIL_PASS
+      - AUTH_SECRET
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: yarn start
     env_file: .env
     environment:
       GMAIL_PASS_FILE: /run/secrets/GMAIL_PASS
