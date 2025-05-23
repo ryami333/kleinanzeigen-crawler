@@ -3,6 +3,7 @@
 import { useTransition } from "react";
 import { submitQueryAction } from "../helpers/submitQueryAction";
 import { Button } from "@mantine/core";
+import { notifications } from "@mantine/notifications";
 
 export const Homepage = ({ currentValue }: { currentValue: string }) => {
   const [isSubmitting, startTransition] = useTransition();
@@ -16,6 +17,11 @@ export const Homepage = ({ currentValue }: { currentValue: string }) => {
         try {
           await submitQueryAction({ query });
         } catch (e) {
+          notifications.show({
+            title: "Error",
+            message: "This query could not be submitted",
+            color: "red",
+          });
           console.error(e);
         }
       }
