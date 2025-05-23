@@ -1,4 +1,5 @@
 import { MantineProvider } from "@mantine/core";
+import { Notifications } from "@mantine/notifications";
 
 const Layout = ({ children }: { children: React.ReactNode }) => (
   <html>
@@ -12,7 +13,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => (
     </head>
 
     <body>
-      <MantineProvider>{children}</MantineProvider>
+      <MantineProvider>
+        <Notifications />
+        {children}
+      </MantineProvider>
     </body>
   </html>
 );
