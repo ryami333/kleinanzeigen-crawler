@@ -16,6 +16,12 @@ export const Homepage = ({ currentValue }: { currentValue: string }) => {
 
         try {
           await submitQueryAction({ query });
+
+          notifications.show({
+            title: "Error",
+            message: "Successfully updated.",
+            color: "green",
+          });
         } catch (e) {
           notifications.show({
             title: "Error",
