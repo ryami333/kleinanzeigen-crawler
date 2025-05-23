@@ -24,7 +24,7 @@ export const Homepage = ({ currentValue }: { currentValue: string }) => {
           });
         } catch (e) {
           notifications.show({
-            title: "Error",
+            title: "Success",
             message: "This query could not be submitted",
             color: "red",
           });
