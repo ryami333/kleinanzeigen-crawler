@@ -10,9 +10,11 @@ export const Homepage = ({ currentValue }: { currentValue: string }) => {
     startTransition(async () => {
       e.preventDefault();
 
-      const query = e.currentTarget.querySelector("textarea")?.value ?? "";
+      if (!isSubmitting) {
+        const query = e.currentTarget.querySelector("textarea")?.value ?? "";
 
-      await submitQueryAction({ query });
+        await submitQueryAction({ query });
+      }
     });
 
   return (
@@ -20,7 +22,7 @@ export const Homepage = ({ currentValue }: { currentValue: string }) => {
       <p>Please use lower-case alphanumeric queries, separated by newlines.</p>
       <form
         method="post"
-        action="/submit"
+        onSubmit={onSubmit}
         style={{
           display: "flex",
           flexDirection: "column",
