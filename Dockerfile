@@ -1,10 +1,5 @@
-FROM redis:8-alpine AS redis
-
 # Use an official Node.js image
 FROM node:22-alpine
-
-COPY --from=redis /usr/local/bin/redis-server /usr/local/bin/redis-server
-COPY --from=redis /usr/local/bin/redis-cli    /usr/local/bin/redis-cli
 
 # Set working directory
 WORKDIR /app
@@ -26,6 +21,6 @@ ADD lib ./lib
 
 ENV TZ=Europe/Berlin
 
-ENTRYPOINT ["/bin/sh", "-c", "redis-server --port 6379 --dir /data & exec \"$@\"", "--"]
+# Deliberately no CMD - one instance needs to run `node ./lib/worker.mjs` and 
+# the other needs to run `yarn start`.
 
-CMD ["node", "./lib/main.mjs"]

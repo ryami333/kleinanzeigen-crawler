@@ -1,4 +1,8 @@
 services:
+  redis:
+    image: redis:8-alpine
+    networks:
+      - kc-internal
   worker:
     build:
       context: .
@@ -15,6 +19,8 @@ services:
     secrets:
       - GMAIL_PASS
       - AUTH_SECRET
+    networks:
+      - kc-internal
   frontend:
     build:
       context: .
@@ -31,8 +37,13 @@ services:
     secrets:
       - GMAIL_PASS
       - AUTH_SECRET
+    networks:
+      - kc-internal
 secrets:
   GMAIL_PASS:
     file: ./secrets/GMAIL_PASS
   AUTH_SECRET:
     file: ./secrets/AUTH_SECRET
+networks:
+  kc-internal:
+    driver: bridge
