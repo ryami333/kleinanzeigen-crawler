@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation";
 import { z } from "zod";
 
 /**
@@ -16,7 +15,7 @@ export const createSafeAction = <T = unknown, J = unknown>(
 
     if (error) {
       console.error(error);
-      return notFound(); // "BadRequest" would be technically more correct, but NextJS doesn't provide a helper for this yet.
+      throw new Error("Validation error");
     }
 
     return handler(params);

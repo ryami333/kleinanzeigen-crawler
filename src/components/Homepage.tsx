@@ -7,22 +7,25 @@ import { Button } from "@mantine/core";
 export const Homepage = ({ currentValue }: { currentValue: string }) => {
   const [isSubmitting, startTransition] = useTransition();
 
-  const onSubmit: React.FormEventHandler = (e) =>
+  const onSubmit: React.FormEventHandler = (e) => {
+    e.preventDefault();
     startTransition(async () => {
-      e.preventDefault();
-
       if (!isSubmitting) {
         const query = e.currentTarget.querySelector("textarea")?.value ?? "";
 
-        await submitQueryAction({ query });
+        try {
+          await submitQueryAction({ query });
+        } catch (e) {
+          console.error(e);
+        }
       }
     });
+  };
 
   return (
     <>
       <p>Please use lower-case alphanumeric queries, separated by newlines.</p>
       <form
-        method="post"
         onSubmit={onSubmit}
         style={{
           display: "flex",
