@@ -14,8 +14,6 @@ services:
     environment:
       GMAIL_PASS_FILE: /run/secrets/GMAIL_PASS
       AUTH_SECRET_FILE: /run/secrets/AUTH_SECRET
-    volumes:
-      - ./redis-data:/data
     secrets:
       - GMAIL_PASS
       - AUTH_SECRET
@@ -34,8 +32,6 @@ services:
       AUTH_SECRET_FILE: /run/secrets/AUTH_SECRET
     ports:
       - "5555:3000"
-    volumes:
-      - ./redis-data:/data
     secrets:
       - GMAIL_PASS
       - AUTH_SECRET
