@@ -8,6 +8,7 @@ import { App } from "../components/App";
 export const dynamic = "force-dynamic";
 
 const Layout = async ({ children }: { children: React.ReactNode }) => {
+  await auth();
   return (
     <html>
       <head>
