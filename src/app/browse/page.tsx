@@ -2,6 +2,8 @@ import { Anchor, List, ListItem } from "@mantine/core";
 import { REDIS_QUERY_KEY } from "../../../lib/constants.mjs";
 import { getRedisClient } from "../../../lib/getRedisClient.mjs";
 
+export const dynamic = "force-dynamic";
+
 export default async function Page() {
   const redisClient = await getRedisClient();
 
