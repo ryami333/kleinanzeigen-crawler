@@ -11,6 +11,9 @@
     "prettier": "^3.5.3",
     "typescript": "^5.8.3"
   },
+  "scripts": {
+    "dev": "docker compose -f compose.yaml -f compose.dev.yaml up --remove-orphans --build"
+  },
   "dependencies": {
     "@mantine/core": "^8.0.1",
     "@mantine/hooks": "^8.0.1",

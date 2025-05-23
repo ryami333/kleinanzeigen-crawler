@@ -1,0 +1,7 @@
+services:
+  worker:
+    command: node ./lib/worker.mjs --watch
+  frontend:
+    command: yarn next dev
+    volumes:
+      - ./src:/app/src
