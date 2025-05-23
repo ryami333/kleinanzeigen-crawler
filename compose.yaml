@@ -3,6 +3,8 @@ services:
     image: redis:8-alpine
     networks:
       - kc-internal
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
   worker:
     build:
       context: .
@@ -19,6 +21,8 @@ services:
       - AUTH_SECRET
     networks:
       - kc-internal
+    depends_on:
+      - redis
   frontend:
     build:
       context: .
@@ -37,6 +41,8 @@ services:
       - AUTH_SECRET
     networks:
       - kc-internal
+    depends_on:
+      - redis
 secrets:
   GMAIL_PASS:
     file: ./secrets/GMAIL_PASS
