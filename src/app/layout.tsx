@@ -1,9 +1,6 @@
 import { createElement } from "react";
 
-/**
- * @param {{ children: React.ReactNode }} props
- */
-export const Layout = ({ children }) =>
+const Layout = ({ children }: { children: React.ReactNode }) =>
   createElement(
     "html",
     null,
@@ -22,3 +19,5 @@ export const Layout = ({ children }) =>
     ),
     createElement("body", null, children),
   );
+
+export default Layout;
