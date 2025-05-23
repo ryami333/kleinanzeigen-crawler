@@ -4,6 +4,7 @@
   "_version": "22.0.0",
 
   "compilerOptions": {
+    "jsx": "preserve",
     "lib": ["es2023", "dom"],
     "allowJs": true,
     "checkJs": true,
@@ -12,7 +13,7 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "moduleResolution": "node16",
+    "moduleResolution": "bundler",
     "noEmit": true
   },
   "includes": ["**/*.mjs", "**/*.js"]
