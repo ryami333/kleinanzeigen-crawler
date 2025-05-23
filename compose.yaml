@@ -1,5 +1,7 @@
 services:
   redis:
+    volumes:
+      - ./redis-data:/data
     image: redis:8-alpine
     networks:
       - kc-internal
