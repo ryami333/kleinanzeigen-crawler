@@ -15,7 +15,7 @@ RUN yarn install --immutable
 # Copy the rest of the app (including crawler.mjs)
 COPY . .
 
-RUN yarn next build
+RUN yarn next build --experimental-build-mode=compile
 
 ENV TZ=Europe/Berlin
 
