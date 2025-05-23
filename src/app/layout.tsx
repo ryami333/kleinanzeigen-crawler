@@ -1,3 +1,5 @@
+import { MantineProvider } from "@mantine/core";
+
 const Layout = ({ children }: { children: React.ReactNode }) => (
   <html>
     <head>
@@ -9,7 +11,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => (
       />
     </head>
 
-    <body>{children}</body>
+    <body>
+      <MantineProvider>{children}</MantineProvider>
+    </body>
   </html>
 );
 
