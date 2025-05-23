@@ -1,3 +1,5 @@
+"use server";
+
 import { z } from "zod";
 import { createSafeAction } from "./createSafeAction";
 import { getRedisClient } from "../../lib/getRedisClient.mjs";
