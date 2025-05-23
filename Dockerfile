@@ -12,12 +12,10 @@ COPY package.json .yarnrc.yml yarn.lock ./
 # Install dependencies with Yarn
 RUN yarn install --immutable
 
-VOLUME /data
-
-EXPOSE 6379
-
 # Copy the rest of the app (including crawler.mjs)
-ADD lib ./lib
+COPY . .
+
+RUN yarn next build
 
 ENV TZ=Europe/Berlin
 
