@@ -29,7 +29,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: yarn next dev
+    command: yarn next start
     env_file: .env
     environment:
       GMAIL_PASS_FILE: /run/secrets/GMAIL_PASS
