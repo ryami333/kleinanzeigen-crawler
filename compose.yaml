@@ -16,11 +16,11 @@ services:
     environment:
       GMAIL_PASS_FILE: /run/secrets/GMAIL_PASS
       AUTH_SECRET_FILE: /run/secrets/AUTH_SECRET
-      KEYCLOAK_CLIENT_SECRET_FILE: /run/secrets/KEYCLOAK_CLIENT_SECRET
+      OAUTH_CLIENT_SECRET_FILE: /run/secrets/OAUTH_CLIENT_SECRET
     secrets:
       - GMAIL_PASS
       - AUTH_SECRET
-      - KEYCLOAK_CLIENT_SECRET
+      - OAUTH_CLIENT_SECRET
     networks:
       - kc-internal
     depends_on:
@@ -34,11 +34,11 @@ services:
     environment:
       GMAIL_PASS_FILE: /run/secrets/GMAIL_PASS
       AUTH_SECRET_FILE: /run/secrets/AUTH_SECRET
-      KEYCLOAK_CLIENT_SECRET_FILE: /run/secrets/KEYCLOAK_CLIENT_SECRET
+      OAUTH_CLIENT_SECRET_FILE: /run/secrets/OAUTH_CLIENT_SECRET
     secrets:
       - GMAIL_PASS
       - AUTH_SECRET
-      - KEYCLOAK_CLIENT_SECRET
+      - OAUTH_CLIENT_SECRET
     networks:
       - kc-internal
     depends_on:
@@ -48,8 +48,8 @@ secrets:
     file: ./secrets/GMAIL_PASS
   AUTH_SECRET:
     file: ./secrets/AUTH_SECRET
-  KEYCLOAK_CLIENT_SECRET:
-    file: ./secrets/KEYCLOAK_CLIENT_SECRET
+  OAUTH_CLIENT_SECRET:
+    file: ./secrets/OAUTH_CLIENT_SECRET
 networks:
   kc-internal:
     driver: bridge

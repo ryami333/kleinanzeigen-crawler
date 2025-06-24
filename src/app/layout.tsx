@@ -4,6 +4,7 @@ import "@mantine/notifications/styles.css";
 import { MantineProvider } from "@mantine/core";
 import { auth, signIn } from "../../auth";
 import { App } from "../components/App";
+import { Notifications } from "@mantine/notifications";
 
 export const dynamic = "force-dynamic";
 
@@ -25,6 +26,7 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
 
       <body>
         <MantineProvider forceColorScheme={colorScheme}>
+          <Notifications />
           <App>{children}</App>
         </MantineProvider>
       </body>

@@ -11,9 +11,9 @@ export const { auth, handlers, signIn, signOut } = NextAuth(
     providers: [
       Keycloak({
         issuer: "https://auth.mitch-ryan.com/realms/master",
-        clientId: env.KEYCLOAK_CLIENT_ID,
+        clientId: env.OAUTH_CLIENT_ID,
         clientSecret: fs
-          .readFileSync(env.KEYCLOAK_CLIENT_SECRET_FILE, "utf-8")
+          .readFileSync(env.OAUTH_CLIENT_SECRET_FILE, "utf-8")
           .trim(), // get rid of newlines,
       }),
     ],
