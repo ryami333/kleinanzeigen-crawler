@@ -1,5 +1,4 @@
 import NextAuth from "next-auth";
-import Keycloak from "next-auth/providers/keycloak";
 import fs from "node:fs";
 import { env } from "./lib/env.mjs";
 import { OIDCConfig } from "next-auth/providers";
