@@ -64,11 +64,23 @@ jobs:
             type=sha,format=long
             type=raw,value=latest
 
+      - name: 💾 Restore Buildx cache
+        uses: actions/cache@v4
+        with:
+          path: /tmp/.buildx-cache
+          key: buildx-${{ github.ref }}-${{ github.sha }}
+          restore-keys: |
+            buildx-${{ github.ref }}-
+            buildx-
+
+
       - name: 🏗️ Build & push (amd64 + arm64/v8)
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
           platforms: linux/amd64,linux/arm64
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to:   type=local,dest=/tmp/.buildx-cache,mode=max
           labels: ${{ steps.meta.outputs.labels }}
           tags: ${{ steps.meta.outputs.tags }}
