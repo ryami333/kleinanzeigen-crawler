@@ -3,32 +3,32 @@
   "packageManager": "yarn@4.2.2",
   "devDependencies": {
     "@types/bull": "^4.10.4",
-    "@types/express": "^5.0.1",
+    "@types/express": "^5.0.3",
     "@types/jsdom": "^21.1.7",
     "@types/nodemailer": "^6.4.17",
-    "@types/react": "^19.1.5",
-    "@types/react-dom": "^19.1.5",
-    "prettier": "^3.5.3",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "prettier": "^3.6.2",
     "typescript": "^5.8.3"
   },
   "scripts": {
     "dev": "docker compose -f compose.yaml -f compose.dev.yaml up --remove-orphans --build"
   },
   "dependencies": {
-    "@mantine/core": "^8.0.1",
-    "@mantine/hooks": "^8.0.1",
-    "@mantine/notifications": "^8.0.1",
-    "@t3-oss/env-core": "^0.12.0",
-    "@tabler/icons-react": "^3.33.0",
+    "@mantine/core": "^8.1.2",
+    "@mantine/hooks": "^8.1.2",
+    "@mantine/notifications": "^8.1.2",
+    "@t3-oss/env-core": "^0.13.8",
+    "@tabler/icons-react": "^3.34.0",
     "bull": "^4.16.5",
-    "dotenv": "^16.5.0",
+    "dotenv": "^16.6.1",
     "jsdom": "^26.1.0",
-    "next": "15.1.8",
-    "next-auth": "^5.0.0-beta.28",
+    "next": "15.3.4",
+    "next-auth": "^5.0.0-beta.29",
     "nodemailer": "^6.10.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "redis": "^4.7.0",
+    "redis": "^4.7.1",
     "zod": "^3.25.67"
   }
 }
