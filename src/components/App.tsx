@@ -9,7 +9,8 @@ import {
   Title,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconAdjustments, IconEye } from "@tabler/icons-react";
+import { IconAdjustments, IconEye, IconLogout } from "@tabler/icons-react";
+import { signOutAction } from "../helpers/signOutAction";
 
 export const App = ({ children }: { children: React.ReactNode }) => {
   const [opened, { toggle }] = useDisclosure();
@@ -40,6 +41,11 @@ export const App = ({ children }: { children: React.ReactNode }) => {
           href="/browse"
           label="Browse"
           leftSection={<IconEye size={16} stroke={1.5} />}
+        />
+        <NavLink
+          onClick={() => signOutAction({})}
+          label="Logout"
+          leftSection={<IconLogout size={16} stroke={1.5} />}
         />
       </AppShell.Navbar>
       <AppShell.Main>
