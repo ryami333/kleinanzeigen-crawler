@@ -1,0 +1,64 @@
+# Builds a Docker image from the repository's Dockerfile and
+# pushes it to the GitHub Container Registry (ghcr.io/<owner>/<repo>).
+#
+# ▶️ Triggers
+#   • On every push to the "main" branch when Docker‑related files change
+#   • Manually via the "Run workflow" button (workflow_dispatch)
+#
+# 🛠️ Prerequisites
+#   • The repository must contain a valid Dockerfile (default context is repo root)
+#   • No extra secrets are needed—GITHUB_TOKEN is granted automatically with
+#     the required permissions below
+
+name: Build & Publish Docker image
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "Dockerfile"
+      - "**/Dockerfile*"
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+# Minimal permissions for this job:
+permissions:
+  contents: read # checkout
+  packages: write # push to ghcr.io
+
+# Centralise image name so you only edit in one place
+env:
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🛎️ Checkout source
+        uses: actions/checkout@v4
+
+      - name: 🔐 Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🏷️ Extract metadata (tags & labels)
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: |
+            ghcr.io/${{ env.IMAGE_NAME }}
+          tags: |
+            type=sha,format=long      # e.g. sha-abcdef1234567890
+            type=raw,value=latest     # also push the "latest" tag
+
+      - name: 🏗️ Build & push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta.outputs.tags }}
