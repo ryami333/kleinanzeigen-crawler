@@ -4,12 +4,12 @@
   "devDependencies": {
     "@types/bull": "^4.10.4",
     "@types/express": "^5.0.3",
-    "@types/jsdom": "^21.1.7",
+    "@types/jsdom": "^27.0.0",
     "@types/nodemailer": "^7.0.4",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "prettier": "^3.6.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   },
   "engines": {
     "node": "^22.21.1"
@@ -25,13 +25,13 @@
     "@tabler/icons-react": "^3.34.0",
     "bull": "^4.16.5",
     "dotenv": "^16.6.1",
-    "jsdom": "^26.1.0",
-    "next": "15.4.7",
+    "jsdom": "^27.2.0",
+    "next": "15.5.6",
     "next-auth": "^5.0.0-beta.30",
-    "nodemailer": "^7.0.7",
+    "nodemailer": "^7.0.10",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "redis": "^4.7.1",
-    "zod": "^3.25.67"
+    "zod": "^3.25.76"
   }
 }
