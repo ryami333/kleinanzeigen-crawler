@@ -11,6 +11,9 @@
     "prettier": "^3.6.2",
     "typescript": "^5.8.3"
   },
+  "engines": {
+    "node": "^22.21.1"
+  },
   "scripts": {
     "dev": "docker compose -f compose.yaml -f compose.dev.yaml up --remove-orphans --build"
   },
