@@ -2,7 +2,6 @@
 # pushes it to the GitHub Container Registry (ghcr.io/<owner>/<repo>).
 #
 # ▶️ Triggers
-#   • On every push to the "main" branch when Docker‑related files change
 #   • Manually via the "Run workflow" button (workflow_dispatch)
 #
 # 🛠️ Prerequisites
@@ -13,8 +12,6 @@
 name: Build & Publish Docker image
 
 on:
-  push:
-    branches: ["main"]
   workflow_dispatch:
 
 # Minimal permissions for this job:
@@ -69,7 +66,6 @@ jobs:
             buildx-${{ github.ref }}-
             buildx-
 
-
       - name: 🏗️ Build & push (amd64 + arm64/v8)
         uses: docker/build-push-action@v5
         with:
@@ -77,6 +73,6 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to:   type=local,dest=/tmp/.buildx-cache,mode=max
+          cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
           labels: ${{ steps.meta.outputs.labels }}
           tags: ${{ steps.meta.outputs.tags }}
