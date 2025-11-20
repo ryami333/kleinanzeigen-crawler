@@ -18,13 +18,13 @@ export const Homepage = ({ currentValue }: { currentValue: string }) => {
           await submitQueryAction({ query });
 
           notifications.show({
-            title: "Error",
+            title: "Success",
             message: "Successfully updated.",
             color: "green",
           });
         } catch (e) {
           notifications.show({
-            title: "Success",
+            title: "Error",
             message: "This query could not be submitted",
             color: "red",
           });
