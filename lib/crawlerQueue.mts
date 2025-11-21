@@ -1,5 +1,5 @@
 import Queue from "bull";
-import { BULL_QUEUE_KEY } from "./constants.mjs";
+import { BULL_QUEUE_KEY } from "./constants.mts";
 
 export const crawlerQueue = new Queue<{ sendNotifications: boolean }>(
   BULL_QUEUE_KEY,
