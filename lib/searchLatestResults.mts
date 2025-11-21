@@ -1,10 +1,7 @@
 import jsdom from "jsdom";
 // { JSDOM } = jsdom;
 
-/**
- * @param {{ query: string }} params
- */
-export const searchLatestResults = async ({ query }) => {
+export const searchLatestResults = async ({ query }: { query: string }) => {
   // Navigate the page to a URL.
   const result = await fetch(
     `https://www.kleinanzeigen.de/s-berlin/${query}/k0l3331`,
