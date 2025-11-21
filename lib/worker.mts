@@ -1,8 +1,8 @@
 import "dotenv/config"; // Only needed for local dev.
-import { crawlerQueue } from "./crawlerQueue.mjs";
-import { notificationQueue } from "./notificationQueue.mjs";
+import { crawlerQueue } from "./crawlerQueue.mts";
+import { notificationQueue } from "./notificationQueue.mts";
 import nodemailer from "nodemailer";
-import { processJob } from "./processJob.mjs";
+import { processJob } from "./processJob.mts";
 import fs from "node:fs";
 import path from "node:path";
 import { env } from "./worker-env.mjs";
