@@ -1,12 +1,12 @@
+import { type Job } from "bull";
 import { PROCESSED_IDS_SET, REDIS_QUERY_KEY } from "./constants.mjs";
 import { getRedisClient } from "./getRedisClient.mjs";
-import { notificationQueue } from "./notificationQueue.mjs";
+import { notificationQueue } from "./notificationQueue.mts";
 import { searchLatestResults } from "./searchLatestResults.mts";
 
-/**
- * @param {import("bull").Job<{ sendNotifications: boolean }>} job
- */
-export const processJob = async function (job) {
+export const processJob = async function (
+  job: Job<{ sendNotifications: boolean }>,
+) {
   const client = await getRedisClient();
 
   const queries = (await client.get(REDIS_QUERY_KEY))?.trim().split("\n") ?? [];
