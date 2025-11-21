@@ -111,6 +111,6 @@ crawlerQueue.add({ sendNotifications: false });
 crawlerQueue.add(
   { sendNotifications: true },
   {
-    repeat: { cron: "*/1 * * * *" /* Every 5 minutes */ },
+    repeat: { cron: "*/5 * * * *" /* Every 5 minutes */ },
   },
 );
