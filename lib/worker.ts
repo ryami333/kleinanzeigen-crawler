@@ -1,11 +1,11 @@
 import "dotenv/config"; // Only needed for local dev.
-import { crawlerQueue } from "./crawlerQueue.mts";
-import { notificationQueue } from "./notificationQueue.mts";
+import { crawlerQueue } from "./crawlerQueue.ts";
+import { notificationQueue } from "./notificationQueue.ts";
 import nodemailer from "nodemailer";
-import { processJob } from "./processJob.mts";
+import { processJob } from "./processJob.ts";
 import fs from "node:fs";
 import path from "node:path";
-import { env } from "./worker-env.mts";
+import { env } from "./worker-env.ts";
 
 /**
  * -----------------------------------------------------------------------------

@@ -1,8 +1,8 @@
 import { type Job } from "bull";
-import { PROCESSED_IDS_SET, REDIS_QUERY_KEY } from "./constants.mts";
-import { getRedisClient } from "./getRedisClient.mts";
-import { notificationQueue } from "./notificationQueue.mts";
-import { searchLatestResults } from "./searchLatestResults.mts";
+import { PROCESSED_IDS_SET, REDIS_QUERY_KEY } from "./constants.ts";
+import { getRedisClient } from "./getRedisClient.ts";
+import { notificationQueue } from "./notificationQueue.ts";
+import { searchLatestResults } from "./searchLatestResults.ts";
 
 export const processJob = async function (
   job: Job<{ sendNotifications: boolean }>,
