@@ -1,7 +1,7 @@
 import Queue from "bull";
-import { NOTIFICATION_QUEUE_KEY } from "./constants.mjs";
+import { NOTIFICATION_QUEUE_KEY } from "./constants.mts";
 
-export const notificationQueue = new Queue<{ html: string, subject: string }>(
+export const notificationQueue = new Queue<{ html: string; subject: string }>(
   NOTIFICATION_QUEUE_KEY,
   `redis://redis:6379`,
 );

@@ -5,7 +5,7 @@ import nodemailer from "nodemailer";
 import { processJob } from "./processJob.mts";
 import fs from "node:fs";
 import path from "node:path";
-import { env } from "./worker-env.mjs";
+import { env } from "./worker-env.mts";
 
 /**
  * -----------------------------------------------------------------------------
@@ -111,6 +111,6 @@ crawlerQueue.add({ sendNotifications: false });
 crawlerQueue.add(
   { sendNotifications: true },
   {
-    repeat: { cron: "*/5 * * * *" /* Every 5 minutes */ },
+    repeat: { cron: "*/1 * * * *" /* Every 5 minutes */ },
   },
 );

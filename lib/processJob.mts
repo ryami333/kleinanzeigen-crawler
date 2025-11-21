@@ -1,6 +1,6 @@
 import { type Job } from "bull";
-import { PROCESSED_IDS_SET, REDIS_QUERY_KEY } from "./constants.mjs";
-import { getRedisClient } from "./getRedisClient.mjs";
+import { PROCESSED_IDS_SET, REDIS_QUERY_KEY } from "./constants.mts";
+import { getRedisClient } from "./getRedisClient.mts";
 import { notificationQueue } from "./notificationQueue.mts";
 import { searchLatestResults } from "./searchLatestResults.mts";
 
