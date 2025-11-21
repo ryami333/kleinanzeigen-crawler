@@ -4,6 +4,6 @@ services:
   frontend:
     command: yarn next dev
     volumes:
-      - ./src:/app/src
+      - ./lib:/app/lib
     ports:
       - "3000:3000"
