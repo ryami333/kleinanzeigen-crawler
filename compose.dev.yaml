@@ -1,9 +1,11 @@
 services:
   worker:
     command: node ./lib/worker.ts --watch
+    volumes:
+      - ./lib:/app/lib
   frontend:
     command: yarn next dev
     volumes:
-      - ./lib:/app/lib
+      - ./src:/app/src
     ports:
       - "3000:3000"
