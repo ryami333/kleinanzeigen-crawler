@@ -67,6 +67,7 @@ export const searchLatestResults = async ({ query }: { query: string }) => {
       price: adElement
         .querySelector(".aditem-main--middle--price-shipping--price")
         ?.innerHTML.trim(),
+      markup: adElement.outerHTML,
     };
   });
 
