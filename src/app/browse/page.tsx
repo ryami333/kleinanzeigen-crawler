@@ -1,6 +1,6 @@
 import { Anchor, List, ListItem } from "@mantine/core";
-import { REDIS_QUERY_KEY } from "../../../lib/constants.mjs";
-import { getRedisClient } from "../../../lib/getRedisClient.mjs";
+import { REDIS_QUERY_KEY } from "../../../lib/constants.mts";
+import { getRedisClient } from "../../../lib/getRedisClient.mts";
 
 export const dynamic = "force-dynamic";
 

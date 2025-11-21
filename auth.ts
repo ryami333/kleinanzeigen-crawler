@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import fs from "node:fs";
 import { OIDCConfig } from "next-auth/providers";
-import { env } from "./src/helpers/frontend-env.mjs";
+import { env } from "./src/helpers/frontend-env.mts";
 
 export const { auth, handlers, signIn, signOut } = NextAuth(
   // Using callback-style so that secret is not evaluated during build-time

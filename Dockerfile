@@ -12,13 +12,13 @@ COPY package.json .yarnrc.yml yarn.lock ./
 # Install dependencies with Yarn
 RUN yarn install --immutable
 
-# Copy the rest of the app (including crawler.mjs)
+# Copy the rest of the app (including crawler.mts)
 COPY . .
 
 RUN yarn next build --experimental-build-mode=compile
 
 ENV TZ=Europe/Berlin
 
-# Deliberately no CMD - one instance needs to run `node ./lib/worker.mjs` and 
+# Deliberately no CMD - one instance needs to run `node ./lib/worker.mts` and 
 # the other needs to run `yarn next start`.
 
