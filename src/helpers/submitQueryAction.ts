@@ -2,9 +2,9 @@
 
 import { z } from "zod";
 import { createSafeAction } from "./createSafeAction";
-import { getRedisClient } from "../../lib/getRedisClient.mjs";
-import { REDIS_QUERY_KEY } from "../../lib/constants.mjs";
-import { crawlerQueue } from "../../lib/crawlerQueue.mjs";
+import { getRedisClient } from "../../lib/getRedisClient.mts";
+import { REDIS_QUERY_KEY } from "../../lib/constants.mts";
+import { crawlerQueue } from "../../lib/crawlerQueue.mts";
 
 const schema = z.object({
   query: z
