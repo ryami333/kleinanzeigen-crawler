@@ -11,7 +11,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: node ./lib/worker.mts
+    command: node ./lib/worker.ts
     env_file: .env
     environment:
       GMAIL_PASS_FILE: /run/secrets/GMAIL_PASS

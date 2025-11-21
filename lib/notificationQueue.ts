@@ -1,5 +1,5 @@
 import Queue from "bull";
-import { NOTIFICATION_QUEUE_KEY } from "./constants.mts";
+import { NOTIFICATION_QUEUE_KEY } from "./constants.ts";
 
 export const notificationQueue = new Queue<{ html: string; subject: string }>(
   NOTIFICATION_QUEUE_KEY,

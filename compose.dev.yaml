@@ -1,6 +1,6 @@
 services:
   worker:
-    command: node ./lib/worker.mts --watch
+    command: node ./lib/worker.ts --watch
   frontend:
     command: yarn next dev
     volumes:
