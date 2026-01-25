@@ -4,7 +4,7 @@ import { kleinanzeigenUrlSchema } from "./kleinanzeigenUrlSchema";
 const NONEMPTY_ERROR = "Row cannot be empty";
 
 export const querySchema = z.object({
-  id: z.string(),
+  id: z.uuid(),
   value: z.union([
     z
       .string()
