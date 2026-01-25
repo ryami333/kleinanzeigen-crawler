@@ -1,7 +1,14 @@
 "use client";
 
 import { submitQueryAction } from "../helpers/submitQueryAction";
-import { Button, Text, Stack, TextInput, ActionIcon } from "@mantine/core";
+import {
+  Button,
+  Stack,
+  TextInput,
+  Fieldset,
+  Divider,
+  Grid,
+} from "@mantine/core";
 import { notifications } from "@mantine/notifications";
 import { useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -48,9 +55,6 @@ export const Homepage = ({
 
   return (
     <Stack>
-      <Text>
-        Please use lower-case alphanumeric queries, separated by newlines.
-      </Text>
       <form
         onSubmit={onSubmit}
         style={{
@@ -61,50 +65,54 @@ export const Homepage = ({
       >
         <Stack gap="lg">
           {fields.map((field, index) => (
-            <div
-              key={field.id}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "minmax(0, 1fr) auto",
-                columnGap: "0.5em",
-              }}
-            >
-              <TextInput
-                style={{ flex: "1 auto" }}
-                error={
-                  formState.errors.queries?.[index]?.message ||
-                  formState.errors.queries?.[index]?.id?.message ||
-                  formState.errors.queries?.[index]?.value?.message
-                }
-                {...register(`queries.${index}.value`)}
-              />
-              <ActionIcon
-                size="lg"
-                type="button"
-                variant="outline"
-                onClick={() => remove(index)}
-              >
-                <IconTrash
-                  style={{ width: "70%", height: "70%" }}
-                  stroke={1.5}
+            <Fieldset key={field.id} variant="default" legend={field.id}>
+              <Stack gap="sm">
+                <TextInput
+                  label="Query"
+                  style={{ flex: "1 auto" }}
+                  error={formState.errors.queries?.[index]?.value?.message}
+                  {...register(`queries.${index}.value`)}
                 />
-              </ActionIcon>
-            </div>
+                <TextInput
+                  label="Notification Email"
+                  style={{ flex: "1 auto" }}
+                  error={formState.errors.queries?.[index]?.email?.message}
+                  description="Leave blank to use default notification email"
+                  {...register(`queries.${index}.email`)}
+                />
+                <Divider />
+                <Button
+                  variant="outline"
+                  onClick={() => remove(index)}
+                  rightSection={<IconTrash size={14} />}
+                >
+                  Remove
+                </Button>
+              </Stack>
+            </Fieldset>
           ))}
 
-          <Button
-            variant="outline"
-            type="button"
-            onClick={() =>
-              append({ id: window.crypto.randomUUID(), value: "" })
-            }
-            rightSection={<IconPlus size={14} />}
-          >
-            Add
-          </Button>
-          <Button type="submit" disabled={formState.isSubmitting} fullWidth>
-            Submit
-          </Button>
+          <Grid>
+            <Grid.Col span={6}>
+              {" "}
+              <Button
+                variant="outline"
+                type="button"
+                fullWidth
+                onClick={() =>
+                  append({ id: window.crypto.randomUUID(), value: "" })
+                }
+                rightSection={<IconPlus size={14} />}
+              >
+                Add
+              </Button>
+            </Grid.Col>
+            <Grid.Col span={6}>
+              <Button type="submit" disabled={formState.isSubmitting} fullWidth>
+                Submit
+              </Button>
+            </Grid.Col>
+          </Grid>
         </Stack>
       </form>
     </Stack>
