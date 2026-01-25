@@ -39,7 +39,7 @@
   },
   "type": "module",
   "engines": {
-    "node": "^22.21.1"
+    "node": "^24.13.0"
   },
   "scripts": {
     "start": "node .output/server/index.mjs",
