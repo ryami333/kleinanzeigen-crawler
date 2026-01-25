@@ -14,7 +14,7 @@ export const processJob = async function (
 
   const rawItems = await client.sMembers(REDIS_QUERY_KEY);
 
-  const queries = await z
+  const queries = z
     .array(querySchema)
     .parse(rawItems.map((item) => JSON.parse(item)));
 
