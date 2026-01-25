@@ -137,3 +137,6 @@ dist
 
 # Docker's persisted data for the redis container
 redis-data
+
+# Vite builds
+.output

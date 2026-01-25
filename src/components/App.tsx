@@ -11,7 +11,7 @@ import {
 import { useDisclosure } from "@mantine/hooks";
 import { IconAdjustments, IconEye, IconLogout } from "@tabler/icons-react";
 import { authClient } from "../helpers/authClient";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@tanstack/react-router";
 
 export const App = ({ children }: { children: React.ReactNode }) => {
   const [opened, { toggle }] = useDisclosure();
@@ -47,7 +47,7 @@ export const App = ({ children }: { children: React.ReactNode }) => {
         <NavLink
           onClick={async () => {
             authClient.signOut();
-            router.refresh();
+            router.invalidate();
           }}
           label="Logout"
           leftSection={<IconLogout size={16} stroke={1.5} />}

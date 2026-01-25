@@ -15,7 +15,7 @@ export const Homepage = ({ currentValue }: { currentValue: string }) => {
         const query = e.currentTarget.querySelector("textarea")?.value ?? "";
 
         try {
-          await submitQueryAction({ query });
+          await submitQueryAction({ data: { query } });
 
           notifications.show({
             title: "Success",
