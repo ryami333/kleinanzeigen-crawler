@@ -1,29 +1,12 @@
 "use client";
 
 import { submitQueryAction } from "../helpers/submitQueryAction";
-import {
-  Button,
-  Text,
-  Stack,
-  TextInput,
-  Fieldset,
-  ActionIcon,
-} from "@mantine/core";
+import { Button, Text, Stack, TextInput, ActionIcon } from "@mantine/core";
 import { notifications } from "@mantine/notifications";
 import { useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import z from "zod";
 import { IconPlus, IconTrash } from "@tabler/icons-react";
-
-const formValidationSchema = z.object({
-  query: z
-    .object({
-      id: z.string(),
-      value: z.string().trim().nonempty({ error: "Row cannot be empty" }),
-    })
-    .array()
-    .transform((input) => input.map((item) => item.value).join("\n")),
-});
+import { formValidationSchema } from "../helpers/formValidationSchema";
 
 export const Homepage = ({ currentValue }: { currentValue: string }) => {
   const { register, control, handleSubmit, formState } = useForm({
@@ -42,8 +25,7 @@ export const Homepage = ({ currentValue }: { currentValue: string }) => {
 
   const onSubmit = handleSubmit(async (formValues) => {
     try {
-      console.log(formValues.query);
-      await submitQueryAction({ data: { query: formValues.query } });
+      await submitQueryAction({ data: formValues });
 
       notifications.show({
         title: "Success",
