@@ -45,5 +45,6 @@
     "start": "node .output/server/index.mjs",
     "dev": "docker compose -f compose.yaml -f compose.dev.yaml up --remove-orphans --build",
     "release": "release-it"
-  }
+  },
+  "version": "0.0.1"
 }
