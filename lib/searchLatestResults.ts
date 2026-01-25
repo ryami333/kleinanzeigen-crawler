@@ -1,5 +1,5 @@
 import jsdom from "jsdom";
-import { kleinanzeigenUrlSchema } from "../src/helpers/kleinanzeigenUrlSchema";
+import { kleinanzeigenUrlSchema } from "../src/helpers/kleinanzeigenUrlSchema.ts";
 // { JSDOM } = jsdom;
 
 export const searchLatestResults = async ({ query }: { query: string }) => {
