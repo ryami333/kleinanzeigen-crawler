@@ -2,14 +2,18 @@
   "name": "kleinanzeigen-crawler",
   "packageManager": "yarn@4.2.2",
   "devDependencies": {
+    "@eslint/js": "^9.39.2",
     "@types/bull": "^4.10.4",
     "@types/express": "^5.0.5",
     "@types/jsdom": "^27.0.0",
     "@types/nodemailer": "^7.0.4",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react-hooks": "^7.0.1",
     "release-it": "^19.2.4",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.53.1"
   },
   "dependencies": {
     "@mantine/core": "^8.3.8",

@@ -34,6 +34,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth(
 
         /* Extra safety – Pocket-ID uses code-flow + PKCE */
         checks: ["pkce", "nonce", "state"],
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } satisfies OIDCConfig<Record<string, any>>,
     ],
   }),
