@@ -9,7 +9,6 @@ export const Route = createFileRoute("/(protected)/_layout/browse")({
     return (
       <List>
         {currentValue
-          .split("\n")
           .map((input) => input.trim())
           .toSorted((a, b) => a.localeCompare(b))
           .map((query, index) => (
