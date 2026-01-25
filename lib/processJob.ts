@@ -37,7 +37,7 @@ export const processJob = async function (
           if (job.data.sendNotifications) {
             notificationQueue.add({
               to: query.email || env.NODEMAILER_TO_ADDRESS,
-              subject: `New search result for ${JSON.stringify(query)} – ${JSON.stringify(result.heading)}`,
+              subject: `New search result for ${JSON.stringify(query.value)} – ${JSON.stringify(result.heading)}`,
               html: [
                 `<p>New search result found:</p>`,
                 `<p><strong><em>${result.heading}</strong></em></p>`,
