@@ -1,11 +1,19 @@
 "use client";
 
 import { submitQueryAction } from "../helpers/submitQueryAction";
-import { Button, Textarea, Text, Stack, TextInput } from "@mantine/core";
+import {
+  Button,
+  Text,
+  Stack,
+  TextInput,
+  Fieldset,
+  ActionIcon,
+} from "@mantine/core";
 import { notifications } from "@mantine/notifications";
 import { useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
+import { IconPlus, IconTrash } from "@tabler/icons-react";
 
 const formValidationSchema = z.object({
   query: z
@@ -65,28 +73,54 @@ export const Homepage = ({ currentValue }: { currentValue: string }) => {
           rowGap: "0.5em",
         }}
       >
-        {fields.map((field, index) => (
-          <TextInput
-            key={field.id}
-            defaultValue={currentValue ?? undefined}
-            style={{ flex: "1 auto" }}
-            error={
-              formState.errors.query?.[index]?.message ||
-              formState.errors.query?.[index]?.id?.message ||
-              formState.errors.query?.[index]?.value?.message
+        <Stack gap="lg">
+          {fields.map((field, index) => (
+            <div
+              key={field.id}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "minmax(0, 1fr) auto",
+                columnGap: "0.5em",
+              }}
+            >
+              <TextInput
+                defaultValue={currentValue ?? undefined}
+                style={{ flex: "1 auto" }}
+                error={
+                  formState.errors.query?.[index]?.message ||
+                  formState.errors.query?.[index]?.id?.message ||
+                  formState.errors.query?.[index]?.value?.message
+                }
+                {...register(`query.${index}.value`)}
+              />
+              <ActionIcon
+                size="lg"
+                type="button"
+                variant="outline"
+                onClick={() => remove(index)}
+              >
+                <IconTrash
+                  style={{ width: "70%", height: "70%" }}
+                  stroke={1.5}
+                />
+              </ActionIcon>
+            </div>
+          ))}
+
+          <Button
+            variant="outline"
+            type="button"
+            onClick={() =>
+              append({ id: window.crypto.randomUUID(), value: "" })
             }
-            {...register(`query.${index}.value`)}
-          />
-        ))}
-        <Button
-          type="button"
-          onClick={() => append({ id: window.crypto.randomUUID(), value: "" })}
-        >
-          Add
-        </Button>
-        <Button type="submit" disabled={formState.isSubmitting} fullWidth>
-          Submit
-        </Button>
+            rightSection={<IconPlus size={14} />}
+          >
+            Add
+          </Button>
+          <Button type="submit" disabled={formState.isSubmitting} fullWidth>
+            Submit
+          </Button>
+        </Stack>
       </form>
     </Stack>
   );
