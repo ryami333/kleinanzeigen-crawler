@@ -16,6 +16,8 @@ export const env = createEnv({
     OAUTH_CLIENT_ID: z.string().nonempty(),
     OAUTH_CLIENT_SECRET_FILE: z.string().nonempty(),
     OAUTH_ISSUER: z.string().nonempty(),
+    BETTER_AUTH_TRUSTED_ORIGINS: z.string().trim().optional(),
+    BASE_URL: z.url().nonempty(),
   },
 
   /**
