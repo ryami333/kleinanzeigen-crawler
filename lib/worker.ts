@@ -1,5 +1,5 @@
 import "dotenv/config"; // Only needed for local dev.
-import { crawlerQueue } from "./crawlerQueue.ts";
+import { getCrawlerQueue } from "./getCrawlerQueue.ts";
 import { notificationQueue } from "./notificationQueue.ts";
 import nodemailer from "nodemailer";
 import { processJob } from "./processJob.ts";
@@ -68,6 +68,7 @@ import { env } from "./worker-env.ts";
  * CRAWLER QUEUE.
  * -----------------------------------------------------------------------------
  */
+const crawlerQueue = getCrawlerQueue({ hostname: "valkey" });
 {
   crawlerQueue.on("active", function (job) {
     console.error(`Job ${job.id} started at ${new Date().toLocaleString()}`);
