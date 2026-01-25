@@ -2,19 +2,20 @@
 
 import { createServerFn } from "@tanstack/react-start";
 import { authMiddleware } from "./authMiddleware.ts";
-import { formValidationSchema } from "./formValidationSchema.ts";
 import { getRedisClient } from "./getRedisClient.ts";
 import { REDIS_QUERY_KEY } from "../../lib/constants.ts";
 import { getCrawlerQueue } from "../../lib/getCrawlerQueue.ts";
 import { env } from "./frontend-env.ts";
+import z from "zod";
+import { querySchema } from "./querySchema.ts";
 
 export const submitQueryAction = createServerFn({ method: "POST" })
   .middleware([authMiddleware])
-  .inputValidator(formValidationSchema)
-  .handler(async ({ data: formData }) => {
+  .inputValidator(z.array(querySchema))
+  .handler(async ({ data: queries }) => {
     const redisClient = await getRedisClient();
 
-    if (formData.queries.length === 0) {
+    if (queries.length === 0) {
       await redisClient.del(REDIS_QUERY_KEY);
     } else {
       await redisClient
@@ -22,7 +23,7 @@ export const submitQueryAction = createServerFn({ method: "POST" })
         .del(REDIS_QUERY_KEY)
         .sAdd(
           REDIS_QUERY_KEY,
-          formData.queries.map((item) => JSON.stringify(item)),
+          queries.map((item) => JSON.stringify(item)),
         )
         .exec();
     }
