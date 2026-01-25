@@ -1,5 +1,5 @@
 import { createClient } from "redis";
-import { env } from "./frontend-env";
+import { env } from "./frontend-env.ts";
 
 export const getRedisClient = async () => {
   const client = createClient({

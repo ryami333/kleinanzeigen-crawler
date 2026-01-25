@@ -2,7 +2,7 @@ import { betterAuth } from "better-auth";
 import { tanstackStartCookies } from "better-auth/tanstack-start";
 import { genericOAuth } from "better-auth/plugins";
 import fs from "node:fs";
-import { env } from "./src/helpers/frontend-env";
+import { env } from "./src/helpers/frontend-env.ts";
 
 export const auth = betterAuth({
   secret: fs.readFileSync(env.AUTH_SECRET_FILE, "utf8").trim(),

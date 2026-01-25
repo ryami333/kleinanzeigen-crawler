@@ -10,8 +10,8 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconAdjustments, IconEye, IconLogout } from "@tabler/icons-react";
-import { authClient } from "../helpers/authClient";
 import { useRouter } from "@tanstack/react-router";
+import { authClient } from "../helpers/authClient.ts";
 
 export const App = ({ children }: { children: React.ReactNode }) => {
   const [opened, { toggle }] = useDisclosure();
