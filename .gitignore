@@ -135,8 +135,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# Docker's persisted data for the redis container
-redis-data
+# Docker's persisted data for the valkey (redis) container
+data
 
 # Vite builds
 .output

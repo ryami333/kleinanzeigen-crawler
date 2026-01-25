@@ -1,11 +1,12 @@
 import { createClient } from "redis";
+import { env } from "./frontend-env";
 
 export const getRedisClient = async () => {
   const client = createClient({
-    url: `redis://valkey:6379`, // 'valkey' is the hostname within Docker
+    url: `redis://${env.VALKEY_HOST}:6379`,
   });
 
-  client.on("error", (err) => console.error("Redis Client Error", err));
+  client.on("error", (err) => console.error("Valkey Client Error", err));
 
   await client.connect();
 
