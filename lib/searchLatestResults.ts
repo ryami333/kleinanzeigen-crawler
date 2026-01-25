@@ -1,10 +1,13 @@
 import jsdom from "jsdom";
+import { kleinanzeigenUrlSchema } from "../src/helpers/kleinanzeigenUrlSchema";
 // { JSDOM } = jsdom;
 
 export const searchLatestResults = async ({ query }: { query: string }) => {
   // Navigate the page to a URL.
   const result = await fetch(
-    `https://www.kleinanzeigen.de/s-berlin/${query}/k0l3331`,
+    kleinanzeigenUrlSchema.safeParse(query).success
+      ? query
+      : `https://www.kleinanzeigen.de/s-berlin/${query}/k0l3331`,
   ).then((result) => {
     if (result.status !== 200) {
       throw new Error("Response not OK");
