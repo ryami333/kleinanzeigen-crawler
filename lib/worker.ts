@@ -6,6 +6,10 @@ import { processJob } from "./processJob.ts";
 import fs from "node:fs";
 import path from "node:path";
 import { env } from "./worker-env.ts";
+import { getRedisClient } from "./getRedisClient.ts";
+import { REDIS_QUERY_KEY } from "./constants.ts";
+import { z } from "zod";
+import { querySchema } from "../src/helpers/querySchema.ts";
 
 /**
  * -----------------------------------------------------------------------------
@@ -98,11 +102,20 @@ const crawlerQueue = getCrawlerQueue({ hostname: "valkey" });
   crawlerQueue.process(processJob);
 }
 
-notificationQueue.add({
-  to: env.NODEMAILER_TO_ADDRESS,
-  subject: "Crawler is live",
-  html: `<p>Crawler started at ${new Date().toLocaleString()}</p>`,
-});
+{
+  const redisClient = await getRedisClient();
+  const rawValues = await redisClient
+    .sMembers(REDIS_QUERY_KEY)
+    .then((results) => results.map((item) => JSON.parse(item)));
+
+  const queries = z.array(querySchema).catch([]).parse(rawValues);
+
+  notificationQueue.add({
+    to: env.NODEMAILER_TO_ADDRESS,
+    subject: "Kleinanzeigen Crawler is live",
+    html: `<p>Crawler started at ${new Date().toLocaleString()}</p><ul>${queries.map((query) => `<li>${query.value}</li>`)}</ul>`,
+  });
+}
 
 /**
  * Start by setting a baseline so that we don't get emailed about all of the
