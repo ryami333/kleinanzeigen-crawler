@@ -1,4 +1,5 @@
 import z from "zod";
+import { kleinanzeigenUrlSchema } from "./kleinanzeigenUrlSchema";
 
 const NONEMPTY_ERROR = "Row cannot be empty";
 
@@ -11,13 +12,7 @@ export const formValidationSchema = z.object({
           .string()
           .trim()
           .nonempty({ error: NONEMPTY_ERROR })
-          .pipe(
-            z.url({
-              protocol: /^https?$/,
-              hostname: /^www\.kleinanzeigen\.de/,
-              error: "Please enter a valid https://www.kleinanzeigen.de/ URL",
-            }),
-          ),
+          .pipe(kleinanzeigenUrlSchema),
         z
           .string() /**
            * \u00e4 -> ä
