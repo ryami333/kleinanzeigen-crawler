@@ -10,10 +10,12 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconAdjustments, IconEye, IconLogout } from "@tabler/icons-react";
-import { signOutAction } from "../helpers/signOutAction";
+import { authClient } from "../helpers/authClient";
+import { useRouter } from "next/navigation";
 
 export const App = ({ children }: { children: React.ReactNode }) => {
   const [opened, { toggle }] = useDisclosure();
+  const router = useRouter();
 
   return (
     <AppShell
@@ -43,7 +45,10 @@ export const App = ({ children }: { children: React.ReactNode }) => {
           leftSection={<IconEye size={16} stroke={1.5} />}
         />
         <NavLink
-          onClick={() => signOutAction({})}
+          onClick={async () => {
+            authClient.signOut();
+            router.refresh();
+          }}
           label="Logout"
           leftSection={<IconLogout size={16} stroke={1.5} />}
         />

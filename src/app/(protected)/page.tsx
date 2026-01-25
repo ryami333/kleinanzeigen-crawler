@@ -1,6 +1,6 @@
-import { REDIS_QUERY_KEY } from "../../lib/constants";
-import { getRedisClient } from "../../lib/getRedisClient";
-import { Homepage } from "../components/Homepage";
+import { REDIS_QUERY_KEY } from "../../../lib/constants";
+import { getRedisClient } from "../../../lib/getRedisClient";
+import { Homepage } from "../../components/Homepage";
 
 export const dynamic = "force-dynamic";
 
