@@ -13,7 +13,6 @@ import { useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IconPlus, IconTrash } from "@tabler/icons-react";
 import z from "zod";
-import { formValidationSchema } from "../helpers/formValidationSchema.ts";
 import { querySchema } from "../helpers/querySchema.ts";
 import { submitQueryAction } from "../helpers/submitQueryAction.ts";
 
@@ -23,7 +22,7 @@ export const Homepage = ({
   currentValue: Array<z.infer<typeof querySchema>>;
 }) => {
   const { register, control, handleSubmit, formState } = useForm({
-    resolver: zodResolver(formValidationSchema),
+    resolver: zodResolver(z.object({ queries: z.array(querySchema) })),
     defaultValues: {
       queries: currentValue,
     },
@@ -36,7 +35,7 @@ export const Homepage = ({
 
   const onSubmit = handleSubmit(async (formValues) => {
     try {
-      await submitQueryAction({ data: formValues });
+      await submitQueryAction({ data: formValues.queries });
 
       notifications.show({
         title: "Success",
