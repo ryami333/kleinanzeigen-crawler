@@ -52,13 +52,13 @@ import { env } from "./worker-env.ts";
       },
     });
 
-    const { subject, html } = job.data;
+    const { subject, html, to } = job.data;
 
     return transporter.sendMail({
       subject,
       html,
       from: env.NODEMAILER_FROM_ADDRESS,
-      to: env.NODEMAILER_TO_ADDRESS,
+      to,
     });
   });
 }
@@ -98,6 +98,7 @@ import { env } from "./worker-env.ts";
 }
 
 notificationQueue.add({
+  to: env.NODEMAILER_TO_ADDRESS,
   subject: "Crawler is live",
   html: `<p>Crawler started at ${new Date().toLocaleString()}</p>`,
 });

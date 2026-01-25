@@ -3,16 +3,23 @@ import { PROCESSED_IDS_SET, REDIS_QUERY_KEY } from "./constants.ts";
 import { getRedisClient } from "./getRedisClient.ts";
 import { notificationQueue } from "./notificationQueue.ts";
 import { searchLatestResults } from "./searchLatestResults.ts";
+import z from "zod";
+import { querySchema } from "../src/helpers/querySchema.ts";
+import { env } from "./worker-env.ts";
 
 export const processJob = async function (
   job: Job<{ sendNotifications: boolean }>,
 ) {
   const client = await getRedisClient();
 
-  const queries = await client.sMembers(REDIS_QUERY_KEY);
+  const rawItems = await client.sMembers(REDIS_QUERY_KEY);
+
+  const queries = await z
+    .array(querySchema)
+    .parse(rawItems.map((item) => JSON.parse(item)));
 
   for (const query of queries) {
-    const results = await searchLatestResults({ query });
+    const results = await searchLatestResults({ query: query.value });
 
     for (const result of results) {
       if (result.id) {
@@ -29,6 +36,7 @@ export const processJob = async function (
 
           if (job.data.sendNotifications) {
             notificationQueue.add({
+              to: query.email || env.NODEMAILER_TO_ADDRESS,
               subject: `New search result for ${JSON.stringify(query)} – ${JSON.stringify(result.heading)}`,
               html: [
                 `<p>New search result found:</p>`,
