@@ -1,10 +1,10 @@
 "use server";
 
 import { z } from "zod";
-import { getRedisClient } from "../../lib/getRedisClient";
 import { REDIS_QUERY_KEY } from "../../lib/constants";
 import { createServerFn } from "@tanstack/react-start";
 import { authMiddleware } from "./authMiddleware";
+import { getRedisClient } from "./getRedisClient";
 
 export const submitQueryAction = createServerFn({ method: "POST" })
   .middleware([authMiddleware])

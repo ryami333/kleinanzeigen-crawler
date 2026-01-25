@@ -1,4 +1,7 @@
 services:
+  valkey:
+    ports:
+      - "6379:6379"
   worker:
     command: node ./lib/worker.ts --watch
     volumes:

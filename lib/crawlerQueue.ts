@@ -3,7 +3,7 @@ import { BULL_QUEUE_KEY } from "./constants.ts";
 
 export const crawlerQueue = new Queue<{ sendNotifications: boolean }>(
   BULL_QUEUE_KEY,
-  `redis://redis:6379`,
+  `redis://valkey:6379`,
   {
     defaultJobOptions: {
       attempts: 10,
