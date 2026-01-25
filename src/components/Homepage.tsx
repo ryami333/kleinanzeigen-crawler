@@ -8,13 +8,14 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { IconPlus, IconTrash } from "@tabler/icons-react";
 import { formValidationSchema } from "../helpers/formValidationSchema";
 
-export const Homepage = ({ currentValue }: { currentValue: string }) => {
+export const Homepage = ({ currentValue }: { currentValue: string[] }) => {
   const { register, control, handleSubmit, formState } = useForm({
     resolver: zodResolver(formValidationSchema),
     defaultValues: {
-      query: currentValue
-        .split("\n")
-        .map((item, index) => ({ id: String(index), value: item })),
+      query: currentValue.map((item, index) => ({
+        id: String(index),
+        value: item,
+      })),
     },
   });
 

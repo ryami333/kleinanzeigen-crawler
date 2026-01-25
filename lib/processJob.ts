@@ -9,7 +9,7 @@ export const processJob = async function (
 ) {
   const client = await getRedisClient();
 
-  const queries = (await client.get(REDIS_QUERY_KEY))?.trim().split("\n") ?? [];
+  const queries = await client.sMembers(REDIS_QUERY_KEY);
 
   for (const query of queries) {
     const results = await searchLatestResults({ query });
