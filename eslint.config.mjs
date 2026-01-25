@@ -6,7 +6,7 @@ import typescriptEslint from "typescript-eslint";
 import reactHooks from "eslint-plugin-react-hooks";
 
 export default defineConfig([
-  globalIgnores(["dist/", ".output/", ".next/"]),
+  globalIgnores(["dist/", ".output/"]),
   js.configs.recommended,
   ...typescriptEslint.configs.recommended,
   reactHooks.configs.flat.recommended,
