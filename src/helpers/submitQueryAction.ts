@@ -1,12 +1,12 @@
 "use server";
 
 import { createServerFn } from "@tanstack/react-start";
-import { authMiddleware } from "./authMiddleware";
-import { getRedisClient } from "./getRedisClient";
-import { formValidationSchema } from "./formValidationSchema";
-import { REDIS_QUERY_KEY } from "../../lib/constants";
-import { getCrawlerQueue } from "../../lib/getCrawlerQueue";
-import { env } from "./frontend-env";
+import { authMiddleware } from "./authMiddleware.ts";
+import { formValidationSchema } from "./formValidationSchema.ts";
+import { getRedisClient } from "./getRedisClient.ts";
+import { REDIS_QUERY_KEY } from "../../lib/constants.ts";
+import { getCrawlerQueue } from "../../lib/getCrawlerQueue.ts";
+import { env } from "./frontend-env.ts";
 
 export const submitQueryAction = createServerFn({ method: "POST" })
   .middleware([authMiddleware])

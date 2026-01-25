@@ -1,7 +1,7 @@
 import { Anchor, List, ListItem } from "@mantine/core";
 import { createFileRoute } from "@tanstack/react-router";
-import { getCurrentQueryValue } from "../../../helpers/getCurrentQueryValue";
-import { kleinanzeigenUrlSchema } from "../../../helpers/kleinanzeigenUrlSchema";
+import { kleinanzeigenUrlSchema } from "../../../helpers/kleinanzeigenUrlSchema.ts";
+import { getCurrentQueryValue } from "../../../helpers/getCurrentQueryValue.ts";
 
 export const Route = createFileRoute("/(protected)/_layout/browse")({
   component: function PageComponent() {

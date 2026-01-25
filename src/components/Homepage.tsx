@@ -1,6 +1,5 @@
 "use client";
 
-import { submitQueryAction } from "../helpers/submitQueryAction";
 import {
   Button,
   Stack,
@@ -13,9 +12,10 @@ import { notifications } from "@mantine/notifications";
 import { useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IconPlus, IconTrash } from "@tabler/icons-react";
-import { formValidationSchema } from "../helpers/formValidationSchema";
-import { querySchema } from "../helpers/querySchema";
 import z from "zod";
+import { formValidationSchema } from "../helpers/formValidationSchema.ts";
+import { querySchema } from "../helpers/querySchema.ts";
+import { submitQueryAction } from "../helpers/submitQueryAction.ts";
 
 export const Homepage = ({
   currentValue,

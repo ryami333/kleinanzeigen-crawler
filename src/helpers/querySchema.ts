@@ -1,5 +1,5 @@
 import z from "zod";
-import { kleinanzeigenUrlSchema } from "./kleinanzeigenUrlSchema";
+import { kleinanzeigenUrlSchema } from "./kleinanzeigenUrlSchema.ts";
 
 const NONEMPTY_ERROR = "Row cannot be empty";
 

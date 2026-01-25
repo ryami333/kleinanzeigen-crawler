@@ -1,9 +1,9 @@
 import { createServerFn } from "@tanstack/react-start";
-import { authMiddleware } from "./authMiddleware";
-import { getRedisClient } from "./getRedisClient";
-import { REDIS_QUERY_KEY } from "../../lib/constants";
-import { querySchema } from "./querySchema";
 import z from "zod";
+import { authMiddleware } from "./authMiddleware.ts";
+import { getRedisClient } from "./getRedisClient.ts";
+import { REDIS_QUERY_KEY } from "../../lib/constants.ts";
+import { querySchema } from "./querySchema.ts";
 
 export const getCurrentQueryValue = createServerFn({ method: "GET" })
   .middleware([authMiddleware])
