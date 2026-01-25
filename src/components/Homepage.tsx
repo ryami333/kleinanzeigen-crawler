@@ -7,21 +7,24 @@ import { useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IconPlus, IconTrash } from "@tabler/icons-react";
 import { formValidationSchema } from "../helpers/formValidationSchema";
+import { querySchema } from "../helpers/querySchema";
+import z from "zod";
 
-export const Homepage = ({ currentValue }: { currentValue: string[] }) => {
+export const Homepage = ({
+  currentValue,
+}: {
+  currentValue: Array<z.infer<typeof querySchema>>;
+}) => {
   const { register, control, handleSubmit, formState } = useForm({
     resolver: zodResolver(formValidationSchema),
     defaultValues: {
-      query: currentValue.map((item, index) => ({
-        id: String(index),
-        value: item,
-      })),
+      queries: currentValue,
     },
   });
 
   const { fields, append, remove } = useFieldArray({
     control,
-    name: "query",
+    name: "queries",
   });
 
   const onSubmit = handleSubmit(async (formValues) => {
@@ -67,14 +70,13 @@ export const Homepage = ({ currentValue }: { currentValue: string[] }) => {
               }}
             >
               <TextInput
-                defaultValue={currentValue ?? undefined}
                 style={{ flex: "1 auto" }}
                 error={
-                  formState.errors.query?.[index]?.message ||
-                  formState.errors.query?.[index]?.id?.message ||
-                  formState.errors.query?.[index]?.value?.message
+                  formState.errors.queries?.[index]?.message ||
+                  formState.errors.queries?.[index]?.id?.message ||
+                  formState.errors.queries?.[index]?.value?.message
                 }
-                {...register(`query.${index}.value`)}
+                {...register(`queries.${index}.value`)}
               />
               <ActionIcon
                 size="lg"

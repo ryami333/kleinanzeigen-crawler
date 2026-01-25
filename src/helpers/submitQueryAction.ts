@@ -12,7 +12,7 @@ export const submitQueryAction = createServerFn({ method: "POST" })
   .handler(async ({ data: formData }) => {
     const redisClient = await getRedisClient();
 
-    if (formData.query.length === 0) {
+    if (formData.queries.length === 0) {
       await redisClient.del(REDIS_QUERY_KEY);
     } else {
       await redisClient
@@ -20,7 +20,7 @@ export const submitQueryAction = createServerFn({ method: "POST" })
         .del(REDIS_QUERY_KEY)
         .sAdd(
           REDIS_QUERY_KEY,
-          formData.query.map((item) => item.value),
+          formData.queries.map((item) => JSON.stringify(item)),
         )
         .exec();
     }
