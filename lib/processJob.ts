@@ -4,7 +4,7 @@ import { getRedisClient } from "./getRedisClient.ts";
 import { notificationQueue } from "./notificationQueue.ts";
 import { searchLatestResults } from "./searchLatestResults.ts";
 import { env } from "./worker-env.ts";
-import { QueryDocument } from "../src/helpers/querySchema.ts";
+import type { QueryDocument } from "../src/helpers/querySchema.ts";
 import { db } from "./db.ts";
 
 export const processJob = async function (

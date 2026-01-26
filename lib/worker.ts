@@ -6,9 +6,7 @@ import { processJob } from "./processJob.ts";
 import fs from "node:fs";
 import path from "node:path";
 import { env } from "./worker-env.ts";
-import { getRedisClient } from "./getRedisClient.ts";
-import { z } from "zod";
-import { QueryDocument, querySchema } from "../src/helpers/querySchema.ts";
+import type { QueryDocument } from "../src/helpers/querySchema.ts";
 import { db } from "./db.ts";
 
 /**
