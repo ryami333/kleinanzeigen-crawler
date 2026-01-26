@@ -4,7 +4,6 @@ import { kleinanzeigenUrlSchema } from "./kleinanzeigenUrlSchema.ts";
 const NONEMPTY_ERROR = "Row cannot be empty";
 
 export const querySchema = z.object({
-  id: z.uuid(),
   value: z.union([
     z
       .string()
@@ -34,3 +33,5 @@ export const querySchema = z.object({
       "Invalid email address",
     ),
 });
+
+export type QueryDocument = z.infer<typeof querySchema>;

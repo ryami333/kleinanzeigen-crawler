@@ -1,14 +1,5 @@
-import {
-  Card,
-  Stack,
-  Title,
-  Text,
-  Button,
-  Modal,
-  ButtonGroup,
-  Group,
-} from "@mantine/core";
-import { querySchema } from "../helpers/querySchema";
+import { Card, Stack, Text, Button, Modal, Group } from "@mantine/core";
+import { QueryDocument, querySchema } from "../helpers/querySchema";
 import z from "zod";
 import { useDisclosure } from "@mantine/hooks";
 import { QueryForm } from "./QueryForm";
@@ -16,58 +7,48 @@ import { addQueryAction } from "../helpers/addQueryAction";
 import { notifications } from "@mantine/notifications";
 import { useRouter } from "@tanstack/react-router";
 import { deleteQueryAction } from "../helpers/deleteQueryAction";
+import { Serialized } from "../helpers/serializeDocument";
 
-export function QueryCard({ query }: { query: z.infer<typeof querySchema> }) {
-  const [opened, { open, close }] = useDisclosure(false);
+export function QueryCard({ query }: { query: Serialized<QueryDocument> }) {
+  const [editModalOpened, editModalActions] = useDisclosure(false);
+  const [confirmDeleteModalOpened, confirmDeleteModalActions] =
+    useDisclosure(false);
   const router = useRouter();
 
   return (
     <>
       <Card>
         <Stack gap="sm">
-          <div>
-            <Title order={3}>Query</Title>
-            <Text>{query.value}</Text>
-          </div>
-          <div>
-            <Title order={3}>Email</Title>
-            <Text>{query.email || "(system default)"}</Text>
-          </div>
+          <dl
+            style={{
+              display: "grid",
+              gridTemplateColumns: "auto minmax(0, 1fr)",
+              margin: 0,
+              columnGap: `var(--mantine-spacing-md)`,
+              rowGap: `var(--mantine-spacing-sm)`,
+            }}
+          >
+            <Text component="dt">Query</Text>
+            <Text component="dd">{query.value}</Text>
+
+            <Text component="dt">Notifications</Text>
+            <Text component="dd">{query.email || "(system default)"}</Text>
+          </dl>
           <Group gap="sm" align="stretch" justify="end">
-            <Button
-              type="button"
-              onClick={async () => {
-                try {
-                  await deleteQueryAction({ data: query.id });
-
-                  notifications.show({
-                    title: "Success",
-                    message: "Successfully deleted.",
-                    color: "green",
-                  });
-
-                  router.invalidate();
-                } catch (e) {
-                  notifications.show({
-                    title: "Error",
-                    message: "This query could not be deleted",
-                    color: "red",
-                  });
-                  console.error(e);
-                }
-              }}
-              color="red"
-              variant="outline"
-            >
+            <Button type="button" onClick={confirmDeleteModalActions.open}>
               Delete
             </Button>
-            <Button type="button" onClick={() => open()}>
+            <Button type="button" onClick={() => editModalActions.open()}>
               Edit
             </Button>
           </Group>
         </Stack>
       </Card>
-      <Modal opened={opened} onClose={close} title="Add New Query">
+      <Modal
+        opened={editModalOpened}
+        onClose={editModalActions.close}
+        title="Add New Query"
+      >
         <QueryForm
           defaultValues={query}
           onSubmit={async (query: z.infer<typeof querySchema>) => {
@@ -80,7 +61,7 @@ export function QueryCard({ query }: { query: z.infer<typeof querySchema> }) {
                 color: "green",
               });
 
-              close();
+              editModalActions.close();
               router.invalidate();
             } catch (e) {
               notifications.show({
@@ -92,6 +73,51 @@ export function QueryCard({ query }: { query: z.infer<typeof querySchema> }) {
             }
           }}
         />
+      </Modal>
+      <Modal
+        opened={confirmDeleteModalOpened}
+        onClose={confirmDeleteModalActions.close}
+        title="Delete Query"
+      >
+        <Stack gap="sm">
+          <Text>Are you sure you wish to delete this query?</Text>
+          <Group gap="sm">
+            <Button
+              type="button"
+              onClick={confirmDeleteModalActions.close}
+              variant="outline"
+            >
+              Cancel
+            </Button>
+            <Button
+              type="button"
+              onClick={async () => {
+                try {
+                  await deleteQueryAction({ data: query.id });
+
+                  notifications.show({
+                    title: "Success",
+                    message: "Successfully deleted.",
+                    color: "green",
+                  });
+
+                  confirmDeleteModalActions.close();
+                  router.invalidate();
+                } catch (e) {
+                  notifications.show({
+                    title: "Error",
+                    message: "This query could not be deleted",
+                    color: "red",
+                  });
+                  console.error(e);
+                }
+              }}
+              color="red"
+            >
+              Delete
+            </Button>
+          </Group>
+        </Stack>
       </Modal>
     </>
   );
