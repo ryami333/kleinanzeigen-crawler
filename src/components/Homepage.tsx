@@ -54,6 +54,8 @@ export const Homepage = ({
                 message: "Successfully updated.",
                 color: "green",
               });
+
+              close();
             } catch (e) {
               notifications.show({
                 title: "Error",
