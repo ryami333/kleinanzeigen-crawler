@@ -4,10 +4,10 @@ import { Button, Modal, Stack } from "@mantine/core";
 import { notifications } from "@mantine/notifications";
 import z from "zod";
 import { querySchema } from "../helpers/querySchema.ts";
-// import { submitQueryAction } from "../helpers/submitQueryAction.ts";
 import { useDisclosure } from "@mantine/hooks";
 import { IconPlus } from "@tabler/icons-react";
 import { QueryForm } from "./QueryForm.tsx";
+import { addQueryAction } from "../helpers/addQueryAction.ts";
 
 export const Homepage = ({
   currentValue,
@@ -16,39 +16,41 @@ export const Homepage = ({
 }) => {
   const [opened, { open, close }] = useDisclosure(false);
 
-  const onSubmit = async (formValues: z.infer<typeof querySchema>) => {
-    try {
-      // await submitQueryAction({ data: formValues.queries });
-
-      notifications.show({
-        title: "Success",
-        message: "Successfully updated.",
-        color: "green",
-      });
-    } catch (e) {
-      notifications.show({
-        title: "Error",
-        message: "This query could not be submitted",
-        color: "red",
-      });
-      console.error(e);
-    }
-  };
-
   return (
-    <Stack>
+    <>
+      <Stack>
+        <Button
+          variant="outline"
+          type="button"
+          fullWidth
+          onClick={() => open()}
+          rightSection={<IconPlus size={14} />}
+        >
+          Add
+        </Button>
+      </Stack>
       <Modal opened={opened} onClose={close} title="Add New Query">
-        <QueryForm onSubmit={onSubmit} />
+        <QueryForm
+          onSubmit={async (query: z.infer<typeof querySchema>) => {
+            try {
+              await addQueryAction({ data: query });
+
+              notifications.show({
+                title: "Success",
+                message: "Successfully updated.",
+                color: "green",
+              });
+            } catch (e) {
+              notifications.show({
+                title: "Error",
+                message: "This query could not be submitted",
+                color: "red",
+              });
+              console.error(e);
+            }
+          }}
+        />
       </Modal>
-      <Button
-        variant="outline"
-        type="button"
-        fullWidth
-        onClick={() => open()}
-        rightSection={<IconPlus size={14} />}
-      >
-        Add
-      </Button>
-    </Stack>
+    </>
   );
 };
