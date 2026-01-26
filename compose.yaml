@@ -25,6 +25,7 @@ services:
     env_file: .env
     environment:
       GMAIL_PASS_FILE: /run/secrets/GMAIL_PASS
+      MONGODB_CONNECTION_STRING: mongodb://mongodb:27017/
     secrets:
       - GMAIL_PASS
     networks:

@@ -7,9 +7,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { env } from "./worker-env.ts";
 import { getRedisClient } from "./getRedisClient.ts";
-import { REDIS_QUERY_KEY } from "./constants.ts";
 import { z } from "zod";
-import { querySchema } from "../src/helpers/querySchema.ts";
+import { QueryDocument, querySchema } from "../src/helpers/querySchema.ts";
+import { db } from "./db.ts";
 
 /**
  * -----------------------------------------------------------------------------
@@ -103,12 +103,10 @@ const crawlerQueue = getCrawlerQueue({ hostname: "valkey" });
 }
 
 {
-  const redisClient = await getRedisClient();
-  const rawValues = await redisClient
-    .sMembers(REDIS_QUERY_KEY)
-    .then((results) => results.map((item) => JSON.parse(item)));
-
-  const queries = z.array(querySchema).catch([]).parse(rawValues);
+  const queries = await db
+    .collection<QueryDocument>("queries")
+    .find()
+    .toArray();
 
   notificationQueue.add({
     to: env.NODEMAILER_TO_ADDRESS,
