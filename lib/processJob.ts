@@ -21,34 +21,42 @@ export const processJob = async function (
     const results = await searchLatestResults({ query: query.value });
 
     for (const result of results) {
-      if (result.id) {
-        const alreadyProcessed = await client.sIsMember(
-          PROCESSED_IDS_SET,
-          result.id,
-        );
+      const emails =
+        query.notifications.length > 0
+          ? query.notifications
+          : [env.NODEMAILER_TO_ADDRESS];
 
-        if (!alreadyProcessed) {
-          const url = new URL(
-            result.href ?? "/",
-            "https://www.kleinanzeigen.de/",
+      for (const email of emails) {
+        if (result.id) {
+          const cacheKey = `${email}:${result.id}`;
+          const alreadyProcessed = await client.sIsMember(
+            PROCESSED_IDS_SET,
+            cacheKey,
           );
 
-          if (job.data.sendNotifications) {
-            notificationQueue.add({
-              to: query.email || env.NODEMAILER_TO_ADDRESS,
-              subject: `New search result for ${JSON.stringify(query.value)} – ${JSON.stringify(result.heading)}`,
-              html: [
-                `<p>New search result found:</p>`,
-                `<p><strong><em>${result.heading}</strong></em></p>`,
-                `<p>${result.description}</p>`,
-                `<p>${result.price}</p>`,
-                `<p>Click <a href="${url.toString()}">here</a> to see the listing.</p>`,
-              ].join("\n"),
-            });
-          }
-        }
+          if (!alreadyProcessed) {
+            const url = new URL(
+              result.href ?? "/",
+              "https://www.kleinanzeigen.de/",
+            );
 
-        await client.sAdd(PROCESSED_IDS_SET, result.id);
+            if (job.data.sendNotifications) {
+              notificationQueue.add({
+                to: email,
+                subject: `New search result for ${JSON.stringify(query.value)} – ${JSON.stringify(result.heading)}`,
+                html: [
+                  `<p>New search result found:</p>`,
+                  `<p><strong><em>${result.heading}</strong></em></p>`,
+                  `<p>${result.description}</p>`,
+                  `<p>${result.price}</p>`,
+                  `<p>Click <a href="${url.toString()}">here</a> to see the listing.</p>`,
+                ].join("\n"),
+              });
+            }
+          }
+
+          await client.sAdd(PROCESSED_IDS_SET, cacheKey);
+        }
       }
     }
   }

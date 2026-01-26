@@ -31,7 +31,11 @@ export function QueryCard({ query }: { query: Serialized<QueryDocument> }) {
             <Text component="dd">{query.value}</Text>
 
             <Text component="dt">Notifications</Text>
-            <Text component="dd">{query.email || "(system default)"}</Text>
+            <Text component="dd">
+              {query.notifications.length > 0
+                ? query.notifications.join(", ")
+                : "(system default)"}
+            </Text>
           </dl>
           <Group gap="sm" align="stretch" justify="end">
             <Button type="button" onClick={confirmDeleteModalActions.open}>
