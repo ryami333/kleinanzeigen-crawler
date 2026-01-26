@@ -7,6 +7,7 @@ export const env = createEnv({
     GMAIL_PASS_FILE: z.string().nonempty(),
     NODEMAILER_FROM_ADDRESS: z.string().nonempty(),
     NODEMAILER_TO_ADDRESS: z.string().nonempty(),
+    MONGODB_CONNECTION_STRING: z.string().nonempty(),
   },
 
   /**

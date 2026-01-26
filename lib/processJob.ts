@@ -1,22 +1,21 @@
 import { type Job } from "bull";
-import { PROCESSED_IDS_SET, REDIS_QUERY_KEY } from "./constants.ts";
+import { PROCESSED_IDS_SET } from "./constants.ts";
 import { getRedisClient } from "./getRedisClient.ts";
 import { notificationQueue } from "./notificationQueue.ts";
 import { searchLatestResults } from "./searchLatestResults.ts";
-import z from "zod";
-import { querySchema } from "../src/helpers/querySchema.ts";
 import { env } from "./worker-env.ts";
+import { QueryDocument } from "../src/helpers/querySchema.ts";
+import { db } from "./db.ts";
 
 export const processJob = async function (
   job: Job<{ sendNotifications: boolean }>,
 ) {
   const client = await getRedisClient();
 
-  const rawItems = await client.sMembers(REDIS_QUERY_KEY);
-
-  const queries = z
-    .array(querySchema)
-    .parse(rawItems.map((item) => JSON.parse(item)));
+  const queries = await db
+    .collection<QueryDocument>("queries")
+    .find()
+    .toArray();
 
   for (const query of queries) {
     const results = await searchLatestResults({ query: query.value });
