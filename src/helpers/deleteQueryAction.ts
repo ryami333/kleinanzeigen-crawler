@@ -2,42 +2,17 @@
 
 import { createServerFn } from "@tanstack/react-start";
 import { authMiddleware } from "./authMiddleware.ts";
-import { getRedisClient } from "./getRedisClient.ts";
-import { REDIS_QUERY_KEY } from "../../lib/constants.ts";
 import { getCrawlerQueue } from "../../lib/getCrawlerQueue.ts";
 import { env } from "./frontend-env.ts";
-import { querySchema } from "./querySchema.ts";
 import z from "zod";
+import { queriesCollection } from "./queriesCollection.ts";
+import { ObjectId } from "mongodb";
 
 export const deleteQueryAction = createServerFn({ method: "POST" })
   .middleware([authMiddleware])
-  .inputValidator(z.uuid())
+  .inputValidator(z.coerce.string())
   .handler(async ({ data: uuid }) => {
-    const redisClient = await getRedisClient();
-
-    const members = await redisClient
-      .sMembers(REDIS_QUERY_KEY)
-      .then((items) =>
-        items.map((item) => querySchema.parse(JSON.parse(item))),
-      );
-
-    const updatedMembers = members.filter((member) => member.id !== uuid);
-
-    {
-      /**
-       * There's no such thing as an "update" operation, so we've got to delete
-       * all the existing queries and then re-add them. Doing it in a single
-       * operation because presumably this is "atomic"??
-       */
-      const operation = redisClient.multi();
-      operation.del(REDIS_QUERY_KEY);
-
-      updatedMembers.forEach((member) => {
-        operation.sAdd(REDIS_QUERY_KEY, JSON.stringify(member));
-      }, redisClient.multi());
-
-      await operation.exec();
-    }
+    queriesCollection.deleteOne({ $where: { _id: new ObjectId(uuid) } });
 
     /**
      * Set a baseline so that we don't get emailed about all of the _existing_

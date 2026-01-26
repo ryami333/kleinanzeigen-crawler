@@ -3,18 +3,19 @@
 import { Button, Modal, Stack } from "@mantine/core";
 import { notifications } from "@mantine/notifications";
 import z from "zod";
-import { querySchema } from "../helpers/querySchema.ts";
+import { QueryDocument, querySchema } from "../helpers/querySchema.ts";
 import { useDisclosure } from "@mantine/hooks";
 import { IconPlus } from "@tabler/icons-react";
 import { QueryForm } from "./QueryForm.tsx";
 import { addQueryAction } from "../helpers/addQueryAction.ts";
 import { useRouter } from "@tanstack/react-router";
 import { QueryCard } from "./QueryCard.tsx";
+import { Serialized } from "../helpers/serializeDocument.ts";
 
 export const Homepage = ({
   currentValue,
 }: {
-  currentValue: Array<z.infer<typeof querySchema>>;
+  currentValue: Serialized<QueryDocument>[];
 }) => {
   const [opened, { open, close }] = useDisclosure(false);
   const router = useRouter();
@@ -37,11 +38,6 @@ export const Homepage = ({
       </Stack>
       <Modal opened={opened} onClose={close} title="Add New Query">
         <QueryForm
-          defaultValues={{
-            id: window.crypto.randomUUID(),
-            value: "",
-            email: "",
-          }}
           onSubmit={async (query: z.infer<typeof querySchema>) => {
             try {
               await addQueryAction({ data: query });
