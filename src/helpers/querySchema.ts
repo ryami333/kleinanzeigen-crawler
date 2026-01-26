@@ -24,14 +24,7 @@ export const querySchema = z.object({
           "May contain alphanumeric characters only (including ü, ä, ö and ß) ",
       }),
   ]),
-  email: z
-    .string()
-    .trim()
-    .nullish()
-    .refine(
-      (input) => (input ? z.email().safeParse(input).success : true),
-      "Invalid email address",
-    ),
+  notifications: z.email().array().prefault([]),
 });
 
 export type QueryDocument = z.infer<typeof querySchema>;
