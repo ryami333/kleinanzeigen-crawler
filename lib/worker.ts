@@ -109,7 +109,7 @@ const crawlerQueue = getCrawlerQueue({ hostname: "valkey" });
   notificationQueue.add({
     to: env.NODEMAILER_TO_ADDRESS,
     subject: "Kleinanzeigen Crawler is live",
-    html: `<p>Crawler started at ${new Date().toLocaleString()}</p><ul>${queries.map((query) => `<li>${query.value}</li>`)}</ul>`,
+    html: `<p>Crawler started at ${new Date().toLocaleString()}</p><ul>${queries.map((query) => `<li>${query.value}</li>`).join("")}</ul>`,
   });
 }
 
