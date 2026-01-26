@@ -12,3 +12,6 @@ services:
       - ./src:/app/src
     ports:
       - "3000:3000"
+  mongodb:
+    ports:
+      - "27017:27017"

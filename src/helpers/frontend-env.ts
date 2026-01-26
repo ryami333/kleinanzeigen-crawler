@@ -19,6 +19,7 @@ export const env = createEnv({
     BETTER_AUTH_TRUSTED_ORIGINS: z.string().trim().optional(),
     BASE_URL: z.url().nonempty(),
     VALKEY_HOST: z.string().nonempty(),
+    MONGODB_CONNECTION_STRING: z.string(),
   },
 
   /**
