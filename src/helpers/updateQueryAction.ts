@@ -11,11 +11,11 @@ import z from "zod";
 
 export const updateQueryAction = createServerFn({ method: "POST" })
   .middleware([authMiddleware])
-  .inputValidator(querySchema.extend({ id: z.string() }))
-  .handler(async ({ data: { id, ...query } }) => {
+  .inputValidator(z.object({ id: z.coerce.string(), values: querySchema }))
+  .handler(async ({ data: { id, values } }) => {
     await queriesCollection.updateOne(
-      { $where: { _id: new ObjectId(id) } },
-      { $set: query },
+      { _id: new ObjectId(id) },
+      { $set: values },
     );
 
     /**
