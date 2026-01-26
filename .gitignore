@@ -140,3 +140,5 @@ data
 
 # Vite builds
 .output
+
+auth.sqlite
