@@ -10,12 +10,13 @@ services:
     healthcheck:
       test: ["CMD", "valkey-cli", "--raw", "incr", "ping"]
   mongodb:
-    image: mongodb/mongodb-community-server:8.0-ubi8
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=user
-      - MONGO_INITDB_ROOT_PASSWORD=pass
+    image: mongo:8
     volumes:
       - "./data/mongdb:/data/db"
+    user: "1000:1000"
+    networks:
+      - kc-internal
+    command: ["mongod", "--bind_ip_all", "--noauth"]
   worker:
     build:
       context: .
