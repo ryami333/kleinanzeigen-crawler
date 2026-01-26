@@ -3,8 +3,10 @@ import { tanstackStartCookies } from "better-auth/tanstack-start";
 import { genericOAuth } from "better-auth/plugins";
 import fs from "node:fs";
 import { env } from "./src/helpers/frontend-env.ts";
+import Database from "better-sqlite3";
 
 export const auth = betterAuth({
+  database: new Database("./auth.sqlite"),
   secret: fs.readFileSync(env.AUTH_SECRET_FILE, "utf8").trim(),
   trustedOrigins: env.BETTER_AUTH_TRUSTED_ORIGINS
     ? env.BETTER_AUTH_TRUSTED_ORIGINS.split(",")

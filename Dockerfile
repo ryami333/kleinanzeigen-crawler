@@ -15,6 +15,7 @@ RUN yarn install --immutable
 # Copy the rest of the app (including crawler.ts)
 COPY . .
 
+RUN yarn init-auth
 RUN yarn vite build
 
 ENV TZ=Europe/Berlin
