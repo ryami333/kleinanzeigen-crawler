@@ -17,6 +17,11 @@ services:
     networks:
       - kc-internal
     command: ["mongod", "--bind_ip_all", "--noauth"]
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.runCommand({ ping: 1 }).ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
   worker:
     build:
       context: .
@@ -31,7 +36,10 @@ services:
     networks:
       - kc-internal
     depends_on:
-      - valkey
+      valkey:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
@@ -50,7 +58,10 @@ services:
     networks:
       - kc-internal
     depends_on:
-      - valkey
+      valkey:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
