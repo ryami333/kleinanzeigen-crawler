@@ -1,4 +1,13 @@
-import { Card, Stack, Title, Text, Button, Modal } from "@mantine/core";
+import {
+  Card,
+  Stack,
+  Title,
+  Text,
+  Button,
+  Modal,
+  ButtonGroup,
+  Group,
+} from "@mantine/core";
 import { querySchema } from "../helpers/querySchema";
 import z from "zod";
 import { useDisclosure } from "@mantine/hooks";
@@ -6,6 +15,7 @@ import { QueryForm } from "./QueryForm";
 import { addQueryAction } from "../helpers/addQueryAction";
 import { notifications } from "@mantine/notifications";
 import { useRouter } from "@tanstack/react-router";
+import { deleteQueryAction } from "../helpers/deleteQueryAction";
 
 export function QueryCard({ query }: { query: z.infer<typeof querySchema> }) {
   const [opened, { open, close }] = useDisclosure(false);
@@ -23,9 +33,38 @@ export function QueryCard({ query }: { query: z.infer<typeof querySchema> }) {
             <Title order={3}>Email</Title>
             <Text>{query.email || "(system default)"}</Text>
           </div>
-          <Button type="button" onClick={() => open()}>
-            Edit
-          </Button>
+          <Group gap="sm" align="stretch" justify="end">
+            <Button
+              type="button"
+              onClick={async () => {
+                try {
+                  await deleteQueryAction({ data: query.id });
+
+                  notifications.show({
+                    title: "Success",
+                    message: "Successfully deleted.",
+                    color: "green",
+                  });
+
+                  router.invalidate();
+                } catch (e) {
+                  notifications.show({
+                    title: "Error",
+                    message: "This query could not be deleted",
+                    color: "red",
+                  });
+                  console.error(e);
+                }
+              }}
+              color="red"
+              variant="outline"
+            >
+              Delete
+            </Button>
+            <Button type="button" onClick={() => open()}>
+              Edit
+            </Button>
+          </Group>
         </Stack>
       </Card>
       <Modal opened={opened} onClose={close} title="Add New Query">
