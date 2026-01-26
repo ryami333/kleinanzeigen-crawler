@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Modal, Stack } from "@mantine/core";
+import { Button, Card, Modal, Stack, Title, Text } from "@mantine/core";
 import { notifications } from "@mantine/notifications";
 import z from "zod";
 import { querySchema } from "../helpers/querySchema.ts";
@@ -19,6 +19,20 @@ export const Homepage = ({
   return (
     <>
       <Stack>
+        {currentValue.map((query, index) => (
+          <Card key={index}>
+            <Stack gap="sm">
+              <div>
+                <Title>Query</Title>
+                <Text>{query.value}</Text>
+              </div>
+              <div>
+                <Title>Email</Title>
+                <Text>{query.email}</Text>
+              </div>
+            </Stack>
+          </Card>
+        ))}
         <Button
           variant="outline"
           type="button"
