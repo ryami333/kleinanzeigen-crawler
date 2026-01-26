@@ -45,6 +45,11 @@ export const Homepage = ({
       </Stack>
       <Modal opened={opened} onClose={close} title="Add New Query">
         <QueryForm
+          defaultValues={{
+            id: window.crypto.randomUUID(),
+            value: "",
+            email: "",
+          }}
           onSubmit={async (query: z.infer<typeof querySchema>) => {
             try {
               await addQueryAction({ data: query });
