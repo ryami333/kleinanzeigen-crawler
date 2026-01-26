@@ -1,9 +1,7 @@
 import { Card, Stack, Text, Button, Modal, Group } from "@mantine/core";
-import { QueryDocument, querySchema } from "../helpers/querySchema";
-import z from "zod";
+import { QueryDocument } from "../helpers/querySchema";
 import { useDisclosure } from "@mantine/hooks";
 import { QueryForm } from "./QueryForm";
-import { addQueryAction } from "../helpers/addQueryAction";
 import { notifications } from "@mantine/notifications";
 import { useRouter } from "@tanstack/react-router";
 import { deleteQueryAction } from "../helpers/deleteQueryAction";
