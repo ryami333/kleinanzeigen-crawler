@@ -3,7 +3,6 @@ import { querySchema } from "../helpers/querySchema";
 import { useForm } from "react-hook-form";
 import z from "zod";
 import { Button, Divider, Stack, TextInput } from "@mantine/core";
-import { IconTrash } from "@tabler/icons-react";
 
 export function QueryForm({
   defaultValues,
