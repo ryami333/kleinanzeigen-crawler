@@ -12,7 +12,7 @@ export const deleteQueryAction = createServerFn({ method: "POST" })
   .middleware([authMiddleware])
   .inputValidator(z.coerce.string())
   .handler(async ({ data: uuid }) => {
-    queriesCollection.deleteOne({ $where: { _id: new ObjectId(uuid) } });
+    await queriesCollection.deleteOne({ _id: new ObjectId(uuid) });
 
     /**
      * Set a baseline so that we don't get emailed about all of the _existing_

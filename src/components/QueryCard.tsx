@@ -8,6 +8,7 @@ import { notifications } from "@mantine/notifications";
 import { useRouter } from "@tanstack/react-router";
 import { deleteQueryAction } from "../helpers/deleteQueryAction";
 import { Serialized } from "../helpers/serializeDocument";
+import { updateQueryAction } from "../helpers/updateQueryAction";
 
 export function QueryCard({ query }: { query: Serialized<QueryDocument> }) {
   const [editModalOpened, editModalActions] = useDisclosure(false);
@@ -51,9 +52,11 @@ export function QueryCard({ query }: { query: Serialized<QueryDocument> }) {
       >
         <QueryForm
           defaultValues={query}
-          onSubmit={async (query: z.infer<typeof querySchema>) => {
+          onSubmit={async (values: QueryDocument) => {
             try {
-              await addQueryAction({ data: query });
+              await updateQueryAction({
+                data: { id: query.id, values },
+              });
 
               notifications.show({
                 title: "Success",
