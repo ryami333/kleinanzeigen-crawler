@@ -8,6 +8,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { IconPlus } from "@tabler/icons-react";
 import { QueryForm } from "./QueryForm.tsx";
 import { addQueryAction } from "../helpers/addQueryAction.ts";
+import { useRouter } from "@tanstack/react-router";
 
 export const Homepage = ({
   currentValue,
@@ -15,6 +16,7 @@ export const Homepage = ({
   currentValue: Array<z.infer<typeof querySchema>>;
 }) => {
   const [opened, { open, close }] = useDisclosure(false);
+  const router = useRouter();
 
   return (
     <>
@@ -23,12 +25,12 @@ export const Homepage = ({
           <Card key={index}>
             <Stack gap="sm">
               <div>
-                <Title>Query</Title>
+                <Title order={3}>Query</Title>
                 <Text>{query.value}</Text>
               </div>
               <div>
-                <Title>Email</Title>
-                <Text>{query.email}</Text>
+                <Title order={3}>Email</Title>
+                <Text>{query.email || "(system default)"}</Text>
               </div>
             </Stack>
           </Card>
@@ -61,6 +63,7 @@ export const Homepage = ({
               });
 
               close();
+              router.invalidate();
             } catch (e) {
               notifications.show({
                 title: "Error",
