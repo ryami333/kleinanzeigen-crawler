@@ -16,7 +16,12 @@ services:
     user: "1000:1000"
     networks:
       - kc-internal
-    command: ["mongod", "--bind_ip_all", "--noauth"]
+    command: ["mongod", "--bind_ip_all"]
+    environment:
+      MONGODB_INITDB_ROOT_USER: root
+      MONGODB_INITDB_ROOT_PASSWORD_FILE: /run/secrets/MONGODB_ROOT_PASSWORD
+    secrets:
+      - MONGODB_ROOT_PASSWORD
     healthcheck:
       test:
         ["CMD", "mongosh", "--quiet", "--eval", "db.runCommand({ ping: 1 }).ok"]
@@ -31,9 +36,10 @@ services:
     env_file: .env
     environment:
       GMAIL_PASS_FILE: /run/secrets/GMAIL_PASS
-      MONGODB_CONNECTION_STRING: mongodb://mongodb:27017/
+      MONGODB_CONNECTION_STRING_FILE: /run/secrets/MONGODB_CONNECTION_STRING
     secrets:
       - GMAIL_PASS
+      - MONGODB_CONNECTION_STRING
     networks:
       - kc-internal
     depends_on:
@@ -53,9 +59,11 @@ services:
     environment:
       AUTH_SECRET_FILE: /run/secrets/AUTH_SECRET
       OAUTH_CLIENT_SECRET_FILE: /run/secrets/OAUTH_CLIENT_SECRET
+      MONGODB_CONNECTION_STRING_FILE: /run/secrets/MONGODB_CONNECTION_STRING
     secrets:
       - AUTH_SECRET
       - OAUTH_CLIENT_SECRET
+      - MONGODB_CONNECTION_STRING
     networks:
       - kc-internal
     depends_on:
@@ -73,6 +81,10 @@ secrets:
     file: ./secrets/AUTH_SECRET
   OAUTH_CLIENT_SECRET:
     file: ./secrets/OAUTH_CLIENT_SECRET
+  MONGODB_CONNECTION_STRING:
+    file: ./secrets/MONGODB_CONNECTION_STRING
+  MONGODB_ROOT_PASSWORD:
+    file: ./secrets/MONGODB_ROOT_PASSWORD
 networks:
   kc-internal:
     driver: bridge
