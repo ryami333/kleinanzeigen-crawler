@@ -18,8 +18,8 @@ services:
       - kc-internal
     command: ["mongod", "--bind_ip_all"]
     environment:
-      MONGODB_INITDB_ROOT_USER: root
-      MONGODB_INITDB_ROOT_PASSWORD_FILE: /run/secrets/MONGODB_ROOT_PASSWORD
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD_FILE: /run/secrets/MONGODB_ROOT_PASSWORD
     secrets:
       - MONGODB_ROOT_PASSWORD
     healthcheck:
