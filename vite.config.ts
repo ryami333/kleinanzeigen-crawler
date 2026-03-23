@@ -2,8 +2,9 @@
 
 import { defineConfig } from "vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
-import viteReact from "@vitejs/plugin-react";
+import viteReact, { reactCompilerPreset } from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
+import babel from "@rolldown/plugin-babel";
 
 export default defineConfig({
   server: {
@@ -21,5 +22,8 @@ export default defineConfig({
     nitro(),
     // react's vite plugin must come after start's vite plugin
     viteReact(),
+    babel({
+      presets: [reactCompilerPreset()],
+    }),
   ],
 });
