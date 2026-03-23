@@ -5030,7 +5030,7 @@ __metadata:
     jsdom: "npm:^27.4.0"
     mongodb: "npm:^7.0.0"
     nitro: "npm:^3.0.260311-beta"
-    nodemailer: "npm:^7.0.12"
+    nodemailer: "npm:^8.0.3"
     prettier: "npm:^3.8.1"
     react: "npm:^19.2.3"
     react-dom: "npm:^19.2.3"
@@ -5788,10 +5788,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:^7.0.12":
-  version: 7.0.12
-  resolution: "nodemailer@npm:7.0.12"
-  checksum: 10c0/b03948744423386b5fd7cb5bdf60797f2f71c4d3db202eedf7e0037429b5887cb90b641e7ca244af3b96e0b76949e3135cba96336fb0d3ade00ae33727ca8cf8
+"nodemailer@npm:^8.0.3":
+  version: 8.0.3
+  resolution: "nodemailer@npm:8.0.3"
+  checksum: 10c0/57edb30171b78c71ea6e766258004cc10f30869876b2ea7b9c8aa121ca3e7832213a15c902bb94f66bbd8db7bd2aef8d2d85ad73871bdc5ce84371dc05677bb6
   languageName: node
   linkType: hard
 
