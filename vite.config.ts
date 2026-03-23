@@ -11,6 +11,11 @@ export default defineConfig({
     strictPort: true,
     host: true, // equivalent to 0.0.0.0
   },
+  css: {
+    modules: {
+      generateScopedName: "[name]__[local]__[hash:base64:5]",
+    },
+  },
   plugins: [
     tanstackStart({}),
     nitro(),
