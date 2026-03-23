@@ -12,7 +12,7 @@ services:
   mongodb:
     image: mongo:8
     volumes:
-      - "./data/mongdb:/data/db"
+      - "./data/mongodb:/data/db"
     user: "1000:1000"
     networks:
       - kc-internal
