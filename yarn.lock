@@ -3314,7 +3314,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"brace-expansion@npm:^2.0.1":
+"brace-expansion@npm:^2.0.2":
   version: 2.0.2
   resolution: "brace-expansion@npm:2.0.2"
   dependencies:
@@ -4569,9 +4569,9 @@ __metadata:
   linkType: hard
 
 "flatted@npm:^3.2.9":
-  version: 3.3.3
-  resolution: "flatted@npm:3.3.3"
-  checksum: 10c0/e957a1c6b0254aa15b8cce8533e24165abd98fadc98575db082b786b5da1b7d72062b81bfdcd1da2f4d46b6ed93bec2434e62333e9b4261d79ef2e75a10dd538
+  version: 3.4.2
+  resolution: "flatted@npm:3.4.2"
+  checksum: 10c0/a65b67aae7172d6cdf63691be7de6c5cd5adbdfdfe2e9da1a09b617c9512ed794037741ee53d93114276bff3f93cd3b0d97d54f9b316e1e4885dde6e9ffdf7ed
   languageName: node
   linkType: hard
 
@@ -4765,7 +4765,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"h3-v2@npm:h3@2.0.1-rc.11, h3@npm:^2.0.1-rc.11":
+"h3-v2@npm:h3@2.0.1-rc.11":
   version: 2.0.1-rc.11
   resolution: "h3@npm:2.0.1-rc.11"
   dependencies:
@@ -4777,6 +4777,23 @@ __metadata:
     crossws:
       optional: true
   checksum: 10c0/3e8b3608a825e4278d9853f8bd6c27040f9f996a885500cbc4c8fb60ab079fddda7863ad261dd77f21b969c91f53dd245d0085e43a0177e1cbdcc939124c7b80
+  languageName: node
+  linkType: hard
+
+"h3@npm:^2.0.1-rc.11":
+  version: 2.0.1-rc.18
+  resolution: "h3@npm:2.0.1-rc.18"
+  dependencies:
+    rou3: "npm:^0.8.1"
+    srvx: "npm:^0.11.12"
+  peerDependencies:
+    crossws: ^0.4.1
+  peerDependenciesMeta:
+    crossws:
+      optional: true
+  bin:
+    h3: bin/h3.mjs
+  checksum: 10c0/3bab7c0f8c0f9df69985048a3c94c498d393d91dc42b53267b0278008f7eafd52f1f1f8cd36f951e188dda8866378a9e6d9b0f5cfc41f6305849aedc72ed2a24
   languageName: node
   linkType: hard
 
@@ -5300,9 +5317,9 @@ __metadata:
   linkType: hard
 
 "kysely@npm:^0.28.5":
-  version: 0.28.10
-  resolution: "kysely@npm:0.28.10"
-  checksum: 10c0/46a42f7092035ccc2adbe5f447ff5377431e9aabd1c55ca2c9f79a11595b97cd446a0ffdcc3e14a993a23fbd7e2a7ab7e874f2b7388f42ddd7d76c6aee9a1241
+  version: 0.28.14
+  resolution: "kysely@npm:0.28.14"
+  checksum: 10c0/0d6aad119660ddf7dc12ecbfc0a33ab0333af53aea350aabf55a0b7978e6b69aba246727738f5462f4633aedbed2106f13e58acc2bdb490845f7b7c869871e97
   languageName: node
   linkType: hard
 
@@ -5563,11 +5580,11 @@ __metadata:
   linkType: hard
 
 "minimatch@npm:^9.0.4":
-  version: 9.0.5
-  resolution: "minimatch@npm:9.0.5"
+  version: 9.0.9
+  resolution: "minimatch@npm:9.0.9"
   dependencies:
-    brace-expansion: "npm:^2.0.1"
-  checksum: 10c0/de96cf5e35bdf0eab3e2c853522f98ffbe9a36c37797778d2665231ec1f20a9447a7e567cb640901f89e4daaa95ae5d70c65a9e8aa2bb0019b6facbc3c0575ed
+    brace-expansion: "npm:^2.0.2"
+  checksum: 10c0/0b6a58530dbb00361745aa6c8cffaba4c90f551afe7c734830bd95fd88ebf469dd7355a027824ea1d09e37181cfeb0a797fb17df60c15ac174303ac110eb7e86
   languageName: node
   linkType: hard
 
@@ -7061,6 +7078,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rou3@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "rou3@npm:0.8.1"
+  checksum: 10c0/c8728cf3c41833db0e20cbadba07b3c678b8b9fb12db1d8803f275a7a6cce02d0be9bee79367575883f65659c9c0ed1001e6527146ed27772e439e5d6c68d264
+  languageName: node
+  linkType: hard
+
 "run-applescript@npm:^7.0.0":
   version: 7.1.0
   resolution: "run-applescript@npm:7.1.0"
@@ -7281,6 +7305,15 @@ __metadata:
   bin:
     srvx: bin/srvx.mjs
   checksum: 10c0/48774e37eb2d8ebfc29ba7f16bb761040c8664d665bd9cddd2be25f82506dd6a17d4b0567b9bf862f0b4865c0f67ae846be62149af0214b00d49aa02f140940c
+  languageName: node
+  linkType: hard
+
+"srvx@npm:^0.11.12":
+  version: 0.11.12
+  resolution: "srvx@npm:0.11.12"
+  bin:
+    srvx: bin/srvx.mjs
+  checksum: 10c0/b7edecbed95240e4691e3509aa522c015f04bee8c0fba75705d7c220e59f861cb07678446fc13ccda8504beba3185bd50f56e0a0ee5d890c9386a7d9abf97678
   languageName: node
   linkType: hard
 
@@ -7654,9 +7687,9 @@ __metadata:
   linkType: hard
 
 "undici@npm:^7.18.2, undici@npm:^7.19.0":
-  version: 7.19.1
-  resolution: "undici@npm:7.19.1"
-  checksum: 10c0/3807f9968dfbbdb45da8e6d68279f2831ff9a173e01f116eb3d43aa07fb03474aae307aba0d167a55ad686ec21733d357776c73639a26ecaaf877cbd6b904e79
+  version: 7.24.5
+  resolution: "undici@npm:7.24.5"
+  checksum: 10c0/2a836f1f6ab078fde3eeb4cc8fd5b34eeaf52cfbdf16a9bab61b7223f43f7847bcd2125d1da7c4e3f5996c528bf9f7940015d39909bab80cfbd71b855470cf21
   languageName: node
   linkType: hard
 
