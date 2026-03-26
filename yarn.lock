@@ -7029,11 +7029,11 @@ __metadata:
   linkType: hard
 
 "srvx@npm:^0.11.12, srvx@npm:^0.11.9":
-  version: 0.11.12
-  resolution: "srvx@npm:0.11.12"
+  version: 0.11.13
+  resolution: "srvx@npm:0.11.13"
   bin:
     srvx: bin/srvx.mjs
-  checksum: 10c0/b7edecbed95240e4691e3509aa522c015f04bee8c0fba75705d7c220e59f861cb07678446fc13ccda8504beba3185bd50f56e0a0ee5d890c9386a7d9abf97678
+  checksum: 10c0/571eb5463eee301a43cfd49b629145962f964a1c049454bd390267c3eae29261d5aee026aefe2ee42a66dbe2bf66db7853d2f8e2d247feea3a6032ba6286c8fd
   languageName: node
   linkType: hard
 
