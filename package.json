@@ -35,7 +35,7 @@
     "dotenv": "^17.2.3",
     "jsdom": "^27.4.0",
     "mongodb": "^7.0.0",
-    "nodemailer": "^8.0.3",
+    "nodemailer": "^8.0.4",
     "prettier": "^3.8.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
