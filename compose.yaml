@@ -25,7 +25,9 @@ services:
     healthcheck:
       test:
         ["CMD", "mongosh", "--quiet", "--eval", "db.runCommand({ ping: 1 }).ok"]
-      interval: 10s
+      start_period: 30s
+      start_interval: 5s
+      interval: 24h
       timeout: 5s
       retries: 5
   worker:
