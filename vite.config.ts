@@ -7,11 +7,6 @@ import { nitro } from "nitro/vite";
 import babel from "@rolldown/plugin-babel";
 
 export default defineConfig({
-  build: {
-    rollupOptions: {
-      external: ["@opentelemetry/api"],
-    },
-  },
   server: {
     port: 3000,
     strictPort: true,

@@ -1480,6 +1480,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@opentelemetry/api@npm:^1.9.1":
+  version: 1.9.1
+  resolution: "@opentelemetry/api@npm:1.9.1"
+  checksum: 10c0/c608485fc8b5a91e1f7e05e843b45b509307456b31cd2ad365933d90813e40ebfedf179f1451c762037e82d7c76aa8500e95d2da3609f640a1206cde5322cd14
+  languageName: node
+  linkType: hard
+
 "@opentelemetry/semantic-conventions@npm:^1.39.0":
   version: 1.40.0
   resolution: "@opentelemetry/semantic-conventions@npm:1.40.0"
@@ -4683,6 +4690,7 @@ __metadata:
     "@mantine/core": "npm:^8.3.18"
     "@mantine/hooks": "npm:^8.3.18"
     "@mantine/notifications": "npm:^8.3.18"
+    "@opentelemetry/api": "npm:^1.9.1"
     "@prettier/plugin-oxc": "npm:^0.1.3"
     "@rolldown/plugin-babel": "npm:^0.2.2"
     "@t3-oss/env-core": "npm:^0.13.10"
