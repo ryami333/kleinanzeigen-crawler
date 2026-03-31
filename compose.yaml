@@ -16,7 +16,7 @@ services:
     user: "1000:1000"
     networks:
       - kc-internal
-    command: ["mongod", "--bind_ip_all"]
+    command: ["mongod", "--bind_ip_all", "--quiet"]
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD_FILE: /run/secrets/MONGODB_ROOT_PASSWORD
