@@ -7,6 +7,7 @@ import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { db } from "./src/helpers/db.ts";
 
 export const auth = betterAuth({
+  telemetry: { enabled: false },
   database: mongodbAdapter(db),
   secret: fs.readFileSync(env.AUTH_SECRET_FILE, "utf8").trim(),
   trustedOrigins: env.BETTER_AUTH_TRUSTED_ORIGINS
