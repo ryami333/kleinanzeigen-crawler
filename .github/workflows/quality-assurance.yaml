@@ -23,11 +23,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out git
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Enable Corepack
         run: corepack enable
       - name: Setup node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version-file: "package.json"
           cache: "yarn"
