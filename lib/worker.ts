@@ -7,7 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { env } from "./worker-env.ts";
 import type { QueryDocument } from "../src/helpers/querySchema.ts";
-import { db } from "./db.ts";
+import { client, db } from "./db.ts";
 
 /**
  * -----------------------------------------------------------------------------
@@ -36,7 +36,9 @@ import { db } from "./db.ts";
     );
 
     if (remainingAttempts === 0) {
-      process.exit(1);
+      console.error(
+        `Notification job ${job.id} permanently failed after ${maxAttempts} attempts.`,
+      );
     }
   });
 
@@ -93,7 +95,9 @@ const crawlerQueue = getCrawlerQueue({ hostname: "valkey" });
     );
 
     if (remainingAttempts === 0) {
-      process.exit(1);
+      console.error(
+        `Crawler job ${job.id} permanently failed after ${maxAttempts} attempts.`,
+      );
     }
   });
 
@@ -125,3 +129,19 @@ crawlerQueue.add(
     repeat: { cron: "*/5 * * * *" /* Every 5 minutes */ },
   },
 );
+
+/**
+ * -----------------------------------------------------------------------------
+ * GRACEFUL SHUTDOWN.
+ * -----------------------------------------------------------------------------
+ */
+const shutdown = async () => {
+  console.error("Shutting down gracefully...");
+  await crawlerQueue.close();
+  await notificationQueue.close();
+  await client.close();
+  process.exit(0);
+};
+
+process.on("SIGTERM", shutdown);
+process.on("SIGINT", shutdown);
