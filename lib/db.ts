@@ -2,6 +2,7 @@ import { MongoClient } from "mongodb";
 import { env } from "./worker-env.ts";
 import fs from "node:fs";
 
-export const db = new MongoClient(
+export const client = new MongoClient(
   fs.readFileSync(env.MONGODB_CONNECTION_STRING_FILE, "utf8").trim(),
-).db("kleinanzeigen-crawler");
+);
+export const db = client.db("kleinanzeigen-crawler");
