@@ -43,7 +43,7 @@ Fetches the Kleinanzeigen results page and parses it with JSDOM. This is the mos
 ## Environment & secrets
 
 - Env is validated with `@t3-oss/env-core` + Zod: `src/helpers/frontend-env.ts` (frontend) and `lib/worker-env.ts` (worker). Add new env vars there.
-- **Secrets are Docker secrets, not env values.** Vars ending in `_FILE` (e.g. `AUTH_SECRET_FILE`, `MONGODB_CONNECTION_STRING_FILE`, `GMAIL_PASS_FILE`) hold a *path*; the code reads the file at that path. Secret files live in `./secrets/` (gitignored).
+- **Secrets are Docker secrets, not env values.** Vars ending in `_FILE` (e.g. `AUTH_SECRET_FILE`, `MONGODB_CONNECTION_STRING_FILE`, `GMAIL_PASS_FILE`) hold a _path_; the code reads the file at that path. Secret files live in `./secrets/` (gitignored).
 - `.env.example` lists the non-secret vars. Auth is OAuth via a `pocket-id` provider (Better Auth).
 
 ## Development
