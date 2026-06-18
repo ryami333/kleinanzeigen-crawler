@@ -52,5 +52,5 @@
     "dev": "docker compose -f compose.yaml -f compose.dev.yaml up --remove-orphans --build",
     "release": "release-it"
   },
-  "version": "4.0.5"
+  "version": "4.0.6"
 }
