@@ -330,89 +330,89 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@better-auth/core@npm:1.6.11":
-  version: 1.6.11
-  resolution: "@better-auth/core@npm:1.6.11"
+"@better-auth/core@npm:1.6.19":
+  version: 1.6.19
+  resolution: "@better-auth/core@npm:1.6.19"
   dependencies:
     "@opentelemetry/semantic-conventions": "npm:^1.39.0"
     "@standard-schema/spec": "npm:^1.1.0"
     zod: "npm:^4.3.6"
   peerDependencies:
-    "@better-auth/utils": 0.4.0
-    "@better-fetch/fetch": 1.1.21
+    "@better-auth/utils": 0.4.2
+    "@better-fetch/fetch": 1.3.1
     "@cloudflare/workers-types": ">=4"
     "@opentelemetry/api": ^1.9.0
-    better-call: 1.3.5
+    better-call: 1.3.6
     jose: ^6.1.0
-    kysely: ^0.28.5
+    kysely: ^0.28.5 || ^0.29.0
     nanostores: ^1.0.1
   peerDependenciesMeta:
     "@cloudflare/workers-types":
       optional: true
     "@opentelemetry/api":
       optional: true
-  checksum: 10c0/c1ca13a81612123cd3b54968d3ab3fa775fe237c11a83b1a8352a12f23c12291c6a7d0967e7d9f2159c6c2baedbe63c60a1ab011fdcc4b8528876d2b84d6d845
+  checksum: 10c0/ba296b6b6d1b7757c6d806b1bfba62b8f358e4e38a31a14b608575b5fc2fd4c90e9fd556972e88c7c009c4aea2aebb337f8b33e3745076a5b174ca481b5bece7
   languageName: node
   linkType: hard
 
-"@better-auth/drizzle-adapter@npm:1.6.11":
-  version: 1.6.11
-  resolution: "@better-auth/drizzle-adapter@npm:1.6.11"
+"@better-auth/drizzle-adapter@npm:1.6.19":
+  version: 1.6.19
+  resolution: "@better-auth/drizzle-adapter@npm:1.6.19"
   peerDependencies:
-    "@better-auth/core": ^1.6.11
-    "@better-auth/utils": 0.4.0
+    "@better-auth/core": ^1.6.19
+    "@better-auth/utils": 0.4.2
     drizzle-orm: ^0.45.2
   peerDependenciesMeta:
     drizzle-orm:
       optional: true
-  checksum: 10c0/0e5803fccc3fe34dec5c1847746ce6c43863181adb06ce9555ad0e83e5760c5cfcecb45453f9c414e9ca75987caa96b36f6edd04f40388ddf16b4ac562870bb7
+  checksum: 10c0/0e65355acdc9f177b25bf5f0151588a94d94b450c5c30aa96beaacaa50acf2d46e8deee258646d2682fd2c4b647ab6846430c5043f38c6d5e1f24862d50ae8f5
   languageName: node
   linkType: hard
 
-"@better-auth/kysely-adapter@npm:1.6.11":
-  version: 1.6.11
-  resolution: "@better-auth/kysely-adapter@npm:1.6.11"
+"@better-auth/kysely-adapter@npm:1.6.19":
+  version: 1.6.19
+  resolution: "@better-auth/kysely-adapter@npm:1.6.19"
   peerDependencies:
-    "@better-auth/core": ^1.6.11
-    "@better-auth/utils": 0.4.0
-    kysely: ^0.28.17
+    "@better-auth/core": ^1.6.19
+    "@better-auth/utils": 0.4.2
+    kysely: ^0.28.17 || ^0.29.0
   peerDependenciesMeta:
     kysely:
       optional: true
-  checksum: 10c0/6b3a476b9327fffdbfeec9c99dadcde3c458d99a0e7802c2aeb0ff0a2f53d71736fc5f05ad5fe47260a7d6e7903b4dd19819d2ef4014da11bf1511fdb58b0009
+  checksum: 10c0/0da484ff8e572326e7d3ba7820550b3470e541a710c899bbf9fe277bbe965666339c8f3c895fc751ca86d7cfe124b5ed186bbdadbb160a5dfbf46594d8ff072e
   languageName: node
   linkType: hard
 
-"@better-auth/memory-adapter@npm:1.6.11":
-  version: 1.6.11
-  resolution: "@better-auth/memory-adapter@npm:1.6.11"
+"@better-auth/memory-adapter@npm:1.6.19":
+  version: 1.6.19
+  resolution: "@better-auth/memory-adapter@npm:1.6.19"
   peerDependencies:
-    "@better-auth/core": ^1.6.11
-    "@better-auth/utils": 0.4.0
-  checksum: 10c0/3034348b1ba4924c3e0c338a5e7685592565aee779e75212e819b387ca044d5747ddcb1afbe1eeb416f5aa8d087ea6f59c156e8e3b9c043ed52415e1ec74e633
+    "@better-auth/core": ^1.6.19
+    "@better-auth/utils": 0.4.2
+  checksum: 10c0/ee82ae8b20a449935e0412cfea81ef220224b5cdca668412d1938293756567deca4d7a8e108b8eb8d0bf67dd7c231a002f0a843cab91c82199d63b890839f30a
   languageName: node
   linkType: hard
 
-"@better-auth/mongo-adapter@npm:1.6.11":
-  version: 1.6.11
-  resolution: "@better-auth/mongo-adapter@npm:1.6.11"
+"@better-auth/mongo-adapter@npm:1.6.19":
+  version: 1.6.19
+  resolution: "@better-auth/mongo-adapter@npm:1.6.19"
   peerDependencies:
-    "@better-auth/core": ^1.6.11
-    "@better-auth/utils": 0.4.0
+    "@better-auth/core": ^1.6.19
+    "@better-auth/utils": 0.4.2
     mongodb: ^6.0.0 || ^7.0.0
   peerDependenciesMeta:
     mongodb:
       optional: true
-  checksum: 10c0/c586926c45cde956a28ef65cd821ba701918ce984098974761e4d8eeb5e2aa9c11f61c71eeab450b68155bee027e0ca3fac15d71d57305748371d4796cee4013
+  checksum: 10c0/6c98eb8789c6d0cc586388b1850e0e49c97ea074e12c3a56380b7a27ac8e4e1bf4d7dd5a3172df57ac4aa2ca468f8c2550160cf751b5b98ed92dbd32f5c76ed4
   languageName: node
   linkType: hard
 
-"@better-auth/prisma-adapter@npm:1.6.11":
-  version: 1.6.11
-  resolution: "@better-auth/prisma-adapter@npm:1.6.11"
+"@better-auth/prisma-adapter@npm:1.6.19":
+  version: 1.6.19
+  resolution: "@better-auth/prisma-adapter@npm:1.6.19"
   peerDependencies:
-    "@better-auth/core": ^1.6.11
-    "@better-auth/utils": 0.4.0
+    "@better-auth/core": ^1.6.19
+    "@better-auth/utils": 0.4.2
     "@prisma/client": ^5.0.0 || ^6.0.0 || ^7.0.0
     prisma: ^5.0.0 || ^6.0.0 || ^7.0.0
   peerDependenciesMeta:
@@ -420,22 +420,31 @@ __metadata:
       optional: true
     prisma:
       optional: true
-  checksum: 10c0/a1973c86a6705e90eee79c30b1dd8e15128102cc08fc7b5ef853e173cfc68a80f7dd3a938d9b48f44d5706177c90fa02d0f216993abf5867050166a305cd2f0c
+  checksum: 10c0/4ce2f6d58d72705cc04d9bfcc39106b0812b41950551760e039aeafb0402aaf2bdcff83a1b8b7faea8005cada30b73db4da72bee840643b08a1e69ad94093ccd
   languageName: node
   linkType: hard
 
-"@better-auth/telemetry@npm:1.6.11":
-  version: 1.6.11
-  resolution: "@better-auth/telemetry@npm:1.6.11"
+"@better-auth/telemetry@npm:1.6.19":
+  version: 1.6.19
+  resolution: "@better-auth/telemetry@npm:1.6.19"
   peerDependencies:
-    "@better-auth/core": ^1.6.11
-    "@better-auth/utils": 0.4.0
-    "@better-fetch/fetch": 1.1.21
-  checksum: 10c0/21e64ae01dacb51f53ecac48abc5d8f7aaa6402b2459730de2c11aaca4e0dd4c0e3417e605266b7f3825ca6fcfc12f90c69c411c30463acbe88791f3433d3283
+    "@better-auth/core": ^1.6.19
+    "@better-auth/utils": 0.4.2
+    "@better-fetch/fetch": 1.3.1
+  checksum: 10c0/0cc303c6ad7d4292db2cb4195616022206f4a043504f2488743e2c99c86f2a1b6f0cc6932de29ad0c482b7cbe6fb9186dacccd16a51a4539f9cfbdeacbf5d4a6
   languageName: node
   linkType: hard
 
-"@better-auth/utils@npm:0.4.0, @better-auth/utils@npm:^0.4.0":
+"@better-auth/utils@npm:0.4.2":
+  version: 0.4.2
+  resolution: "@better-auth/utils@npm:0.4.2"
+  dependencies:
+    "@noble/hashes": "npm:^2.0.1"
+  checksum: 10c0/1c39491a44ecfec5e54fc981f9f09f0c76fc8102b06b31fec1bdf4b7c53714f3a6929412af3075248a852df1268043eaab283f698e859542ee79a366f162aabf
+  languageName: node
+  linkType: hard
+
+"@better-auth/utils@npm:^0.4.0":
   version: 0.4.0
   resolution: "@better-auth/utils@npm:0.4.0"
   dependencies:
@@ -444,7 +453,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@better-fetch/fetch@npm:1.1.21, @better-fetch/fetch@npm:^1.1.21":
+"@better-fetch/fetch@npm:1.3.1":
+  version: 1.3.1
+  resolution: "@better-fetch/fetch@npm:1.3.1"
+  checksum: 10c0/efb7f90af218aa152e8055225c3998294237128066234f82d3002c7eb383e04554262e30353dba5b021fb927b36e0aa3f64f85505e8f651a1c42e3b4f55d9702
+  languageName: node
+  linkType: hard
+
+"@better-fetch/fetch@npm:^1.1.21":
   version: 1.1.21
   resolution: "@better-fetch/fetch@npm:1.1.21"
   checksum: 10c0/b23355b9eb397a4e6d3b269b027f19c44e3348b42640fa8f133ea4ca9c07e1d289781d2b18477f56883040e7401fcc751c52a6f0b56ea619bdd3132fff3cbb43
@@ -540,6 +556,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emnapi/core@npm:1.9.2":
+  version: 1.9.2
+  resolution: "@emnapi/core@npm:1.9.2"
+  dependencies:
+    "@emnapi/wasi-threads": "npm:1.2.1"
+    tslib: "npm:^2.4.0"
+  checksum: 10c0/5500393f953951bad0768fafaa9191f2d938956b20c6d6a79e5ab696a613a25ce6ad23422bc18e86e6ce8deb147619d8d0d7d413a69f84adc01a6633cc353cd9
+  languageName: node
+  linkType: hard
+
 "@emnapi/runtime@npm:1.10.0":
   version: 1.10.0
   resolution: "@emnapi/runtime@npm:1.10.0"
@@ -555,6 +581,15 @@ __metadata:
   dependencies:
     tslib: "npm:^2.4.0"
   checksum: 10c0/04332fb62076afc440aa23316c04bec42f584ca8b074e5507d08e2b33a47cbe0493b1aadb8f3c1057b64ae1e17f5bde1a7bc37f7facc9d0bc25c18197cbd366f
+  languageName: node
+  linkType: hard
+
+"@emnapi/runtime@npm:1.9.2":
+  version: 1.9.2
+  resolution: "@emnapi/runtime@npm:1.9.2"
+  dependencies:
+    tslib: "npm:^2.4.0"
+  checksum: 10c0/61c3a59e0c36784558b8d58eb02bd04815aa5fb0dbfbaf84d1b3050a78aa0cc63ea129ae806bd1e48062bfeb7fc36eb0e5431740d62f64ea51bdf426404b8caa
   languageName: node
   linkType: hard
 
@@ -594,32 +629,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/config-array@npm:^0.23.3":
-  version: 0.23.3
-  resolution: "@eslint/config-array@npm:0.23.3"
+"@eslint/config-array@npm:^0.23.5":
+  version: 0.23.5
+  resolution: "@eslint/config-array@npm:0.23.5"
   dependencies:
-    "@eslint/object-schema": "npm:^3.0.3"
+    "@eslint/object-schema": "npm:^3.0.5"
     debug: "npm:^4.3.1"
     minimatch: "npm:^10.2.4"
-  checksum: 10c0/7c19027acf9110cc542513ff9f3ca73a61d127e900c24f0e8e4d5e18aa22baf08d1d5bc386563d2f9311095f3b7898fe9b627b590fe9232b745ef60d4443cf9f
+  checksum: 10c0/b24833c4c76e78ee075d306cd3f095db46b2db0f90cc13a6ee6e4275f9889731c05bf5403ab5fefb79c756e07ac9184ed0e04570341382f9eccbccc80e6d1a0c
   languageName: node
   linkType: hard
 
-"@eslint/config-helpers@npm:^0.5.3":
-  version: 0.5.3
-  resolution: "@eslint/config-helpers@npm:0.5.3"
+"@eslint/config-helpers@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "@eslint/config-helpers@npm:0.6.0"
   dependencies:
-    "@eslint/core": "npm:^1.1.1"
-  checksum: 10c0/c836476e839a79dcdc9f7e0013057cfe0341162180d50e5a08668edb4b4b6c520a3174011469f6ef02efd2affd092263c020e89d0a3452c801427b0ac003549a
+    "@eslint/core": "npm:^1.2.1"
+  checksum: 10c0/f9af20e8b60b0ba27edb74b8eb40c0c5d51a9bf9baf9e053bb57833a87cb0a1c49b4dfaad88fc24d49c907ad1324c8a0b668684fa9c321351dac4bc9155ec10a
   languageName: node
   linkType: hard
 
-"@eslint/core@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@eslint/core@npm:1.1.1"
+"@eslint/core@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@eslint/core@npm:1.2.1"
   dependencies:
     "@types/json-schema": "npm:^7.0.15"
-  checksum: 10c0/129c654c78afc1f6d61dccb0ce841be667f09f052f7d5642614b6ba5eeebd579ca6cc336d7b750d88625e61f7aad22fdd62bf83847fbfc10cc3e58cfe6c5072e
+  checksum: 10c0/10979b40588ecfef771fcb5013a542a35fb30692cc95a65f3481b0b36fbd89f5679efeb30d57f4eed35203d859aabace2a620177d6c536f71b299a1af2f3398f
   languageName: node
   linkType: hard
 
@@ -635,20 +670,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/object-schema@npm:^3.0.3":
-  version: 3.0.3
-  resolution: "@eslint/object-schema@npm:3.0.3"
-  checksum: 10c0/4abbb7cba5419dce46ae8aa8e979fa190f2e906a8e1b5a8e22e4489f62a68dea3967679f66acbc0c3ef89f33252a7460e39fc2d6f2b4f616a137f3514eda4784
+"@eslint/object-schema@npm:^3.0.5":
+  version: 3.0.5
+  resolution: "@eslint/object-schema@npm:3.0.5"
+  checksum: 10c0/1db337431f520b99e9edda64ef5fafd7ec6a029843eeb608753025125b6649d861d843cffafafd3c4e37926d7d5f9ec0c6a8e3665c13c3da2144e8132892e92e
   languageName: node
   linkType: hard
 
-"@eslint/plugin-kit@npm:^0.6.1":
-  version: 0.6.1
-  resolution: "@eslint/plugin-kit@npm:0.6.1"
+"@eslint/plugin-kit@npm:^0.7.2":
+  version: 0.7.2
+  resolution: "@eslint/plugin-kit@npm:0.7.2"
   dependencies:
-    "@eslint/core": "npm:^1.1.1"
+    "@eslint/core": "npm:^1.2.1"
     levn: "npm:^0.4.1"
-  checksum: 10c0/f8354a7b92cc41e7a55d51986d192134be84f9dc0c91b5e649d075d733b56981c4ca8bf4460d54120c4c87b47984167bad2cb9bceb303f11b0a3bad22b3ed06a
+  checksum: 10c0/aafba08077bcd6d7dde6c2e21db18086046a88f914f29971a84cac9ad2d48952ded1b293e665e523805297eff756522dafa16f0062195e2c7143dcd1d47d11ed
   languageName: node
   linkType: hard
 
@@ -728,14 +763,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hookform/resolvers@npm:^5.2.2":
-  version: 5.2.2
-  resolution: "@hookform/resolvers@npm:5.2.2"
+"@hookform/resolvers@npm:^5.4.0":
+  version: 5.4.0
+  resolution: "@hookform/resolvers@npm:5.4.0"
   dependencies:
     "@standard-schema/utils": "npm:^0.3.0"
   peerDependencies:
     react-hook-form: ^7.55.0
-  checksum: 10c0/0692cd61dcc2a70cbb27b88a37f733c39e97f555c036ba04a81bd42b0467461cfb6bafacb46c16f173672f9c8a216bd7928a2330d4e49c700d130622bf1defaf
+  checksum: 10c0/ea312948a8ee4dd711287295c95ddd4cefc69d3e01ecf196477aaf5179fbb28b10801486cb3e909abaea169ee7199ce9e725fcded8a98a539ba07aa278753a42
   languageName: node
   linkType: hard
 
@@ -1186,7 +1221,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@napi-rs/wasm-runtime@npm:^1.0.7, @napi-rs/wasm-runtime@npm:^1.1.4, @napi-rs/wasm-runtime@npm:^1.1.5":
+"@napi-rs/wasm-runtime@npm:^1.1.3, @napi-rs/wasm-runtime@npm:^1.1.4, @napi-rs/wasm-runtime@npm:^1.1.5":
   version: 1.1.5
   resolution: "@napi-rs/wasm-runtime@npm:1.1.5"
   dependencies:
@@ -1409,109 +1444,146 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oxc-parser/binding-android-arm64@npm:0.99.0":
-  version: 0.99.0
-  resolution: "@oxc-parser/binding-android-arm64@npm:0.99.0"
+"@oxc-parser/binding-android-arm-eabi@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-android-arm-eabi@npm:0.125.0"
+  conditions: os=android & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@oxc-parser/binding-android-arm64@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-android-arm64@npm:0.125.0"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"@oxc-parser/binding-darwin-arm64@npm:0.99.0":
-  version: 0.99.0
-  resolution: "@oxc-parser/binding-darwin-arm64@npm:0.99.0"
+"@oxc-parser/binding-darwin-arm64@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-darwin-arm64@npm:0.125.0"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@oxc-parser/binding-darwin-x64@npm:0.99.0":
-  version: 0.99.0
-  resolution: "@oxc-parser/binding-darwin-x64@npm:0.99.0"
+"@oxc-parser/binding-darwin-x64@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-darwin-x64@npm:0.125.0"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@oxc-parser/binding-freebsd-x64@npm:0.99.0":
-  version: 0.99.0
-  resolution: "@oxc-parser/binding-freebsd-x64@npm:0.99.0"
+"@oxc-parser/binding-freebsd-x64@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-freebsd-x64@npm:0.125.0"
   conditions: os=freebsd & cpu=x64
   languageName: node
   linkType: hard
 
-"@oxc-parser/binding-linux-arm-gnueabihf@npm:0.99.0":
-  version: 0.99.0
-  resolution: "@oxc-parser/binding-linux-arm-gnueabihf@npm:0.99.0"
+"@oxc-parser/binding-linux-arm-gnueabihf@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-linux-arm-gnueabihf@npm:0.125.0"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@oxc-parser/binding-linux-arm-musleabihf@npm:0.99.0":
-  version: 0.99.0
-  resolution: "@oxc-parser/binding-linux-arm-musleabihf@npm:0.99.0"
+"@oxc-parser/binding-linux-arm-musleabihf@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-linux-arm-musleabihf@npm:0.125.0"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@oxc-parser/binding-linux-arm64-gnu@npm:0.99.0":
-  version: 0.99.0
-  resolution: "@oxc-parser/binding-linux-arm64-gnu@npm:0.99.0"
+"@oxc-parser/binding-linux-arm64-gnu@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-linux-arm64-gnu@npm:0.125.0"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@oxc-parser/binding-linux-arm64-musl@npm:0.99.0":
-  version: 0.99.0
-  resolution: "@oxc-parser/binding-linux-arm64-musl@npm:0.99.0"
+"@oxc-parser/binding-linux-arm64-musl@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-linux-arm64-musl@npm:0.125.0"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@oxc-parser/binding-linux-riscv64-gnu@npm:0.99.0":
-  version: 0.99.0
-  resolution: "@oxc-parser/binding-linux-riscv64-gnu@npm:0.99.0"
+"@oxc-parser/binding-linux-ppc64-gnu@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-linux-ppc64-gnu@npm:0.125.0"
+  conditions: os=linux & cpu=ppc64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@oxc-parser/binding-linux-riscv64-gnu@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-linux-riscv64-gnu@npm:0.125.0"
   conditions: os=linux & cpu=riscv64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@oxc-parser/binding-linux-s390x-gnu@npm:0.99.0":
-  version: 0.99.0
-  resolution: "@oxc-parser/binding-linux-s390x-gnu@npm:0.99.0"
+"@oxc-parser/binding-linux-riscv64-musl@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-linux-riscv64-musl@npm:0.125.0"
+  conditions: os=linux & cpu=riscv64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@oxc-parser/binding-linux-s390x-gnu@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-linux-s390x-gnu@npm:0.125.0"
   conditions: os=linux & cpu=s390x & libc=glibc
   languageName: node
   linkType: hard
 
-"@oxc-parser/binding-linux-x64-gnu@npm:0.99.0":
-  version: 0.99.0
-  resolution: "@oxc-parser/binding-linux-x64-gnu@npm:0.99.0"
+"@oxc-parser/binding-linux-x64-gnu@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-linux-x64-gnu@npm:0.125.0"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@oxc-parser/binding-linux-x64-musl@npm:0.99.0":
-  version: 0.99.0
-  resolution: "@oxc-parser/binding-linux-x64-musl@npm:0.99.0"
+"@oxc-parser/binding-linux-x64-musl@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-linux-x64-musl@npm:0.125.0"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@oxc-parser/binding-wasm32-wasi@npm:0.99.0":
-  version: 0.99.0
-  resolution: "@oxc-parser/binding-wasm32-wasi@npm:0.99.0"
+"@oxc-parser/binding-openharmony-arm64@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-openharmony-arm64@npm:0.125.0"
+  conditions: os=openharmony & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@oxc-parser/binding-wasm32-wasi@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-wasm32-wasi@npm:0.125.0"
   dependencies:
-    "@napi-rs/wasm-runtime": "npm:^1.0.7"
+    "@emnapi/core": "npm:1.9.2"
+    "@emnapi/runtime": "npm:1.9.2"
+    "@napi-rs/wasm-runtime": "npm:^1.1.3"
   conditions: cpu=wasm32
   languageName: node
   linkType: hard
 
-"@oxc-parser/binding-win32-arm64-msvc@npm:0.99.0":
-  version: 0.99.0
-  resolution: "@oxc-parser/binding-win32-arm64-msvc@npm:0.99.0"
+"@oxc-parser/binding-win32-arm64-msvc@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-win32-arm64-msvc@npm:0.125.0"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@oxc-parser/binding-win32-x64-msvc@npm:0.99.0":
-  version: 0.99.0
-  resolution: "@oxc-parser/binding-win32-x64-msvc@npm:0.99.0"
+"@oxc-parser/binding-win32-ia32-msvc@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-win32-ia32-msvc@npm:0.125.0"
+  conditions: os=win32 & cpu=ia32
+  languageName: node
+  linkType: hard
+
+"@oxc-parser/binding-win32-x64-msvc@npm:0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-parser/binding-win32-x64-msvc@npm:0.125.0"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -1530,10 +1602,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oxc-project/types@npm:^0.99.0":
-  version: 0.99.0
-  resolution: "@oxc-project/types@npm:0.99.0"
-  checksum: 10c0/1b8dd57c64e37e2d2bc574560e786f864257f72ec5afd46cc1fbb515a5ee19d211b04216fe5bd776d188012c75ddb38cc59a1ae2758dfdd6c7d77b8df6b042a7
+"@oxc-project/types@npm:^0.125.0":
+  version: 0.125.0
+  resolution: "@oxc-project/types@npm:0.125.0"
+  checksum: 10c0/95e3d64cd8e0fb6e909ed34717e8411bf02508dded0fd7f19e74e3e56948647b8477b6d80493368793e737f35d336de634f6c0acd52f409ff955c11b8a018c25
   languageName: node
   linkType: hard
 
@@ -1551,12 +1623,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prettier/plugin-oxc@npm:^0.1.3":
-  version: 0.1.3
-  resolution: "@prettier/plugin-oxc@npm:0.1.3"
+"@prettier/plugin-oxc@npm:^0.1.4":
+  version: 0.1.4
+  resolution: "@prettier/plugin-oxc@npm:0.1.4"
   dependencies:
-    oxc-parser: "npm:0.99.0"
-  checksum: 10c0/fe2fc459577ff41ef559fe48b8e7ba29431c6f6a344cee9ec6a9d3a4a272d6a3dbe8cf7e6e08405df9bdf5dd3531102e9897378b823373af4b3c037babb0341d
+    oxc-parser: "npm:0.125.0"
+  checksum: 10c0/8e653e9bd94791c8d1bcdcf52552f29740533d7a04265c2db2f8947794b5d712c7dc5124202be0f4b5f4e3967e0448e506f843644b3d6092442139382b0be0cc
   languageName: node
   linkType: hard
 
@@ -1831,11 +1903,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rolldown/plugin-babel@npm:^0.2.2":
-  version: 0.2.2
-  resolution: "@rolldown/plugin-babel@npm:0.2.2"
+"@rolldown/plugin-babel@npm:^0.2.3":
+  version: 0.2.3
+  resolution: "@rolldown/plugin-babel@npm:0.2.3"
   dependencies:
-    picomatch: "npm:^4.0.3"
+    picomatch: "npm:^4.0.4"
   peerDependencies:
     "@babel/core": ^7.29.0 || ^8.0.0-rc.1
     "@babel/plugin-transform-runtime": ^7.29.0 || ^8.0.0-rc.1
@@ -1849,7 +1921,7 @@ __metadata:
       optional: true
     vite:
       optional: true
-  checksum: 10c0/d00d6afd831c1efa5eac8bbe9eb4c78abfe731c744ffac99d2246e78a94ac8546ee26d0a304541143427e59a846c96d3d5728da540293d02c37bcbe3972428b3
+  checksum: 10c0/84afe9854137b576f963f4fd11080dc0b8afe6243d565513d33ddfed9ea9149652110def881a3911b5e889f5fa505df036c6839f4d0fd01d4222297d7f2baa21
   languageName: node
   linkType: hard
 
@@ -1874,9 +1946,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@t3-oss/env-core@npm:^0.13.10":
-  version: 0.13.10
-  resolution: "@t3-oss/env-core@npm:0.13.10"
+"@t3-oss/env-core@npm:^0.13.11":
+  version: 0.13.11
+  resolution: "@t3-oss/env-core@npm:0.13.11"
   peerDependencies:
     arktype: ^2.1.0
     typescript: ">=5.0.0"
@@ -1891,25 +1963,25 @@ __metadata:
       optional: true
     zod:
       optional: true
-  checksum: 10c0/b3bd6edf9306ca77078cc1c596f038a6589fec9d279febcad5e02007ec6afa2e7a7173e62d74920620222e91a9c0a4a51a995c231c0a16bbdd9ddd966d6cbd67
+  checksum: 10c0/acb1d5c8f184f0004612b0ed1ef965f3fd014b945b3192057f1500ba760ded8d4c988e6cfed3c63070ccde3b8f7dc27f90044d29474325c5025e44fd3c607441
   languageName: node
   linkType: hard
 
-"@tabler/icons-react@npm:^3.40.0":
-  version: 3.40.0
-  resolution: "@tabler/icons-react@npm:3.40.0"
+"@tabler/icons-react@npm:^3.44.0":
+  version: 3.44.0
+  resolution: "@tabler/icons-react@npm:3.44.0"
   dependencies:
-    "@tabler/icons": "npm:3.40.0"
+    "@tabler/icons": "npm:3.44.0"
   peerDependencies:
     react: ">= 16"
-  checksum: 10c0/a6985c9e8d1986c14594f5bc7007d2398b7b1efd2202304a24e23eb1fa6a48a23f9a6aaa3c5626781990cc0f0a46773c0a0cb747b6984dde26f03ba4ebd1d9cf
+  checksum: 10c0/9a4bb6f1121d001049be8bb5757160ce4d5f2430671479ee94763f88ef43a69ab8d89b835d6c6451de22f3071793b779fefeed43db49d7993de1ea65c50145c9
   languageName: node
   linkType: hard
 
-"@tabler/icons@npm:3.40.0":
-  version: 3.40.0
-  resolution: "@tabler/icons@npm:3.40.0"
-  checksum: 10c0/d335323695dff9218b486bb84a79893f86d5c284dc022c86bfdcfc550605c48ddffe72161c93f6fcab47ba6d828311c101fc5e306fb698b5b5104cf6250ed314
+"@tabler/icons@npm:3.44.0":
+  version: 3.44.0
+  resolution: "@tabler/icons@npm:3.44.0"
+  checksum: 10c0/0d5c1f9d6e68aa04c4a661e96035190e0884e0bc0022d31922efad3cfba210a25b2f013c0b6c0ab6aeb3d5a402a9b85a168966bd11a30ba6087f614f8521ccf3
   languageName: node
   linkType: hard
 
@@ -2352,12 +2424,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^19.2.9":
-  version: 19.2.9
-  resolution: "@types/react@npm:19.2.9"
+"@types/react@npm:^19.2.17":
+  version: 19.2.17
+  resolution: "@types/react@npm:19.2.17"
   dependencies:
     csstype: "npm:^3.2.2"
-  checksum: 10c0/91c6839edd10ebdab4cd686d2a744e6ae078ed5831a36d48284ae92df0463c89bda1084ffdd2e6445f0716236c2c6ae0828b82f70720727632331695f4581d2a
+  checksum: 10c0/bc2c4af96b3e480604424de70d5ebda90c5f4b485df471858c0bc2d7d70364b606ec3c4d8579f94f01aa0c6c0591f56bcf14cba5689f5eea4b74250ccdc3a232
   languageName: node
   linkType: hard
 
@@ -2728,25 +2800,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.6.2":
-  version: 1.6.11
-  resolution: "better-auth@npm:1.6.11"
+"better-auth@npm:^1.6.19":
+  version: 1.6.19
+  resolution: "better-auth@npm:1.6.19"
   dependencies:
-    "@better-auth/core": "npm:1.6.11"
-    "@better-auth/drizzle-adapter": "npm:1.6.11"
-    "@better-auth/kysely-adapter": "npm:1.6.11"
-    "@better-auth/memory-adapter": "npm:1.6.11"
-    "@better-auth/mongo-adapter": "npm:1.6.11"
-    "@better-auth/prisma-adapter": "npm:1.6.11"
-    "@better-auth/telemetry": "npm:1.6.11"
-    "@better-auth/utils": "npm:0.4.0"
-    "@better-fetch/fetch": "npm:1.1.21"
+    "@better-auth/core": "npm:1.6.19"
+    "@better-auth/drizzle-adapter": "npm:1.6.19"
+    "@better-auth/kysely-adapter": "npm:1.6.19"
+    "@better-auth/memory-adapter": "npm:1.6.19"
+    "@better-auth/mongo-adapter": "npm:1.6.19"
+    "@better-auth/prisma-adapter": "npm:1.6.19"
+    "@better-auth/telemetry": "npm:1.6.19"
+    "@better-auth/utils": "npm:0.4.2"
+    "@better-fetch/fetch": "npm:1.3.1"
     "@noble/ciphers": "npm:^2.1.1"
     "@noble/hashes": "npm:^2.0.1"
-    better-call: "npm:1.3.5"
+    better-call: "npm:1.3.6"
     defu: "npm:^6.1.4"
     jose: "npm:^6.1.3"
-    kysely: "npm:^0.28.17"
+    kysely: "npm:^0.28.17 || ^0.29.0"
     nanostores: "npm:^1.1.1"
     zod: "npm:^4.3.6"
   peerDependencies:
@@ -2808,13 +2880,13 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 10c0/f1914530516b164d43d3d84690e501a9d2beebb6e80254960e79afab7980217b080dbec056e7c33a54eb3e2ec8a5e54fb5fc864ccbf9cbfd2f1161ea1b61cfed
+  checksum: 10c0/68685121bcdf4953dab56f0fa48cefb360dd68de140dc278bb6f3f9043ad3c430305bf81adb603170f7ba7f9bb83abdf34f7226436f76de98c62a3f132796d5f
   languageName: node
   linkType: hard
 
-"better-call@npm:1.3.5":
-  version: 1.3.5
-  resolution: "better-call@npm:1.3.5"
+"better-call@npm:1.3.6":
+  version: 1.3.6
+  resolution: "better-call@npm:1.3.6"
   dependencies:
     "@better-auth/utils": "npm:^0.4.0"
     "@better-fetch/fetch": "npm:^1.1.21"
@@ -2825,7 +2897,7 @@ __metadata:
   peerDependenciesMeta:
     zod:
       optional: true
-  checksum: 10c0/2b629138301b2cf34c3c7c808f658d77510123fd31c0e30622981608c6f8e5571187f0919af37951f92c66f0cbfaa67bc07c5c16139fdf7e5f8e6616964b1628
+  checksum: 10c0/94044551dbb851e526b9942aefc60b90afe66d93049a5b2091f8833981b992dab19c3596fba511b1291749b19d38f81b2c020656a920a6b3f0e47001d9d7b81a
   languageName: node
   linkType: hard
 
@@ -2871,10 +2943,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bson@npm:^7.0.0":
-  version: 7.1.1
-  resolution: "bson@npm:7.1.1"
-  checksum: 10c0/005d912cdeeca5c2b6e3543358ab707c9d61bc1db0e0c71ca1fe31ae991851e62101ac3c172d600eed4f860ff12ec68473295782c7781a7b215fc5e38e446923
+"bson@npm:^7.2.0":
+  version: 7.3.0
+  resolution: "bson@npm:7.3.0"
+  checksum: 10c0/d5827bad3b93934fa7034e3761552df9c1ac6284fcbc8f7ec95933a1f2d8dbafa8a0eaa2773bc0671331318c8205f95d9e8c78b83611fa0b5cc11c090836b13f
   languageName: node
   linkType: hard
 
@@ -3303,6 +3375,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:^17.4.2":
+  version: 17.4.2
+  resolution: "dotenv@npm:17.4.2"
+  checksum: 10c0/164f8e77a646c8446867d5b588d26ea6005c8ea7c5eb41cf926f6113d23f2191355f6e0cfd95ea9bab98394a5b0a3f1e51a8399711b666fe55cc7b0bd745f942
+  languageName: node
+  linkType: hard
+
 "eastasianwidth@npm:^0.2.0":
   version: 0.2.0
   resolution: "eastasianwidth@npm:0.2.0"
@@ -3428,9 +3507,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "eslint-plugin-react-hooks@npm:7.0.1"
+"eslint-plugin-react-hooks@npm:^7.1.1":
+  version: 7.1.1
+  resolution: "eslint-plugin-react-hooks@npm:7.1.1"
   dependencies:
     "@babel/core": "npm:^7.24.4"
     "@babel/parser": "npm:^7.24.4"
@@ -3438,8 +3517,8 @@ __metadata:
     zod: "npm:^3.25.0 || ^4.0.0"
     zod-validation-error: "npm:^3.5.0 || ^4.0.0"
   peerDependencies:
-    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
-  checksum: 10c0/1e711d1a9d1fa9cfc51fa1572500656577201199c70c795c6a27adfc1df39e5c598f69aab6aa91117753d23cc1f11388579a2bed14921cf9a4efe60ae8618496
+    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0 || ^10.0.0
+  checksum: 10c0/cee8454915d71ac5d70a0d8f4f260e76eaf45fcd4162747dd4282b792ee5616d187351dabe6cdcff9040c79d0cec625635c4fd0777276be119efa88ebe058525
   languageName: node
   linkType: hard
 
@@ -3469,16 +3548,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^10.1.0":
-  version: 10.1.0
-  resolution: "eslint@npm:10.1.0"
+"eslint@npm:^10.5.0":
+  version: 10.5.0
+  resolution: "eslint@npm:10.5.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.8.0"
     "@eslint-community/regexpp": "npm:^4.12.2"
-    "@eslint/config-array": "npm:^0.23.3"
-    "@eslint/config-helpers": "npm:^0.5.3"
-    "@eslint/core": "npm:^1.1.1"
-    "@eslint/plugin-kit": "npm:^0.6.1"
+    "@eslint/config-array": "npm:^0.23.5"
+    "@eslint/config-helpers": "npm:^0.6.0"
+    "@eslint/core": "npm:^1.2.1"
+    "@eslint/plugin-kit": "npm:^0.7.2"
     "@humanfs/node": "npm:^0.16.6"
     "@humanwhocodes/module-importer": "npm:^1.0.1"
     "@humanwhocodes/retry": "npm:^0.4.2"
@@ -3510,7 +3589,7 @@ __metadata:
       optional: true
   bin:
     eslint: bin/eslint.js
-  checksum: 10c0/b784ac18905b663fa4a801b0baa7bfa636c2d7ac08dad60690b15338c9b2126c5fa9fd4f9269b4f584cb0b426e428c1e353e23ff5ab6d8f8c610a0bb365831d6
+  checksum: 10c0/e1f7a1d442027e5478945cb07b6a382adc3f149fbfd3dbc14951a7a9fa312546b27fb35b0556897ca1d04539ad16ee85bda75ad9f724873e1153d1fbca0d6145
   languageName: node
   linkType: hard
 
@@ -4290,50 +4369,50 @@ __metadata:
   resolution: "kleinanzeigen-crawler@workspace:."
   dependencies:
     "@eslint/js": "npm:^10.0.1"
-    "@hookform/resolvers": "npm:^5.2.2"
+    "@hookform/resolvers": "npm:^5.4.0"
     "@mantine/core": "npm:^9.3.2"
     "@mantine/hooks": "npm:^9.3.2"
     "@mantine/notifications": "npm:^9.3.2"
     "@opentelemetry/api": "npm:^1.9.1"
-    "@prettier/plugin-oxc": "npm:^0.1.3"
-    "@rolldown/plugin-babel": "npm:^0.2.2"
-    "@t3-oss/env-core": "npm:^0.13.10"
-    "@tabler/icons-react": "npm:^3.40.0"
+    "@prettier/plugin-oxc": "npm:^0.1.4"
+    "@rolldown/plugin-babel": "npm:^0.2.3"
+    "@t3-oss/env-core": "npm:^0.13.11"
+    "@tabler/icons-react": "npm:^3.44.0"
     "@tanstack/react-router": "npm:^1.170.16"
     "@tanstack/react-start": "npm:^1.168.26"
     "@types/express": "npm:^5.0.6"
     "@types/jsdom": "npm:^28.0.3"
     "@types/nodemailer": "npm:^8.0.1"
-    "@types/react": "npm:^19.2.9"
+    "@types/react": "npm:^19.2.17"
     "@types/react-dom": "npm:^19.2.3"
     "@vitejs/plugin-react": "npm:^6.0.2"
     babel-plugin-react-compiler: "npm:^1.0.0"
-    better-auth: "npm:^1.6.2"
+    better-auth: "npm:^1.6.19"
     bull: "npm:^4.16.5"
-    dotenv: "npm:^17.2.3"
-    eslint: "npm:^10.1.0"
-    eslint-plugin-react-hooks: "npm:^7.0.1"
+    dotenv: "npm:^17.4.2"
+    eslint: "npm:^10.5.0"
+    eslint-plugin-react-hooks: "npm:^7.1.1"
     jsdom: "npm:^29.1.1"
-    mongodb: "npm:^7.0.0"
+    mongodb: "npm:^7.3.0"
     nitro: "npm:^3.0.260610-beta"
     nodemailer: "npm:^9.0.1"
-    prettier: "npm:^3.8.1"
-    react: "npm:^19.2.3"
-    react-dom: "npm:^19.2.3"
-    react-hook-form: "npm:^7.71.1"
+    prettier: "npm:^3.8.4"
+    react: "npm:^19.2.7"
+    react-dom: "npm:^19.2.7"
+    react-hook-form: "npm:^7.79.0"
     redis: "npm:^6.0.0"
     release-it: "npm:^20.2.0"
     typescript: "npm:^6.0.3"
     typescript-eslint: "npm:^8.61.1"
     vite: "npm:^8.0.16"
-    zod: "npm:^4.3.6"
+    zod: "npm:^4.4.3"
   languageName: unknown
   linkType: soft
 
-"kysely@npm:^0.28.17":
-  version: 0.28.17
-  resolution: "kysely@npm:0.28.17"
-  checksum: 10c0/70573292d8d60a1e29be9b432c1b25fe21d4806ecd5e9859b5ba8d2af799769878f4b3d91731ffe3e03744c7291476fe843640d31741f3637e20c3c49afea3c5
+"kysely@npm:^0.28.17 || ^0.29.0":
+  version: 0.29.2
+  resolution: "kysely@npm:0.29.2"
+  checksum: 10c0/ed2c4b438fc685def6ce15f1cc8a35192903fa0dd74ee84d959cbd61b3bc8c13e24618aeaf0495298f99f84024181e91d4506b74bec38b7ec325a733dff01dad
   languageName: node
   linkType: hard
 
@@ -4773,12 +4852,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongodb@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "mongodb@npm:7.0.0"
+"mongodb@npm:^7.3.0":
+  version: 7.3.0
+  resolution: "mongodb@npm:7.3.0"
   dependencies:
     "@mongodb-js/saslprep": "npm:^1.3.0"
-    bson: "npm:^7.0.0"
+    bson: "npm:^7.2.0"
     mongodb-connection-string-url: "npm:^7.0.0"
   peerDependencies:
     "@aws-sdk/credential-providers": ^3.806.0
@@ -4803,7 +4882,7 @@ __metadata:
       optional: true
     socks:
       optional: true
-  checksum: 10c0/425258188fd6d0d73c58ce2f16177d53d4280804b52de0e6dfd4ce0bec2c2965625c1765111f800ce8e6f2a28187657e8f42bf7dd6cc9675844e619b0dec18b9
+  checksum: 10c0/da819b11a7b00ead726efe3c26b170f2ce9df53631b3110cb7f6926808d54bf21731ad77327bbc18573f58974c2f140080d9d990fc0b41809659c540b6b5eadf
   languageName: node
   linkType: hard
 
@@ -5138,27 +5217,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"oxc-parser@npm:0.99.0":
-  version: 0.99.0
-  resolution: "oxc-parser@npm:0.99.0"
+"oxc-parser@npm:0.125.0":
+  version: 0.125.0
+  resolution: "oxc-parser@npm:0.125.0"
   dependencies:
-    "@oxc-parser/binding-android-arm64": "npm:0.99.0"
-    "@oxc-parser/binding-darwin-arm64": "npm:0.99.0"
-    "@oxc-parser/binding-darwin-x64": "npm:0.99.0"
-    "@oxc-parser/binding-freebsd-x64": "npm:0.99.0"
-    "@oxc-parser/binding-linux-arm-gnueabihf": "npm:0.99.0"
-    "@oxc-parser/binding-linux-arm-musleabihf": "npm:0.99.0"
-    "@oxc-parser/binding-linux-arm64-gnu": "npm:0.99.0"
-    "@oxc-parser/binding-linux-arm64-musl": "npm:0.99.0"
-    "@oxc-parser/binding-linux-riscv64-gnu": "npm:0.99.0"
-    "@oxc-parser/binding-linux-s390x-gnu": "npm:0.99.0"
-    "@oxc-parser/binding-linux-x64-gnu": "npm:0.99.0"
-    "@oxc-parser/binding-linux-x64-musl": "npm:0.99.0"
-    "@oxc-parser/binding-wasm32-wasi": "npm:0.99.0"
-    "@oxc-parser/binding-win32-arm64-msvc": "npm:0.99.0"
-    "@oxc-parser/binding-win32-x64-msvc": "npm:0.99.0"
-    "@oxc-project/types": "npm:^0.99.0"
+    "@oxc-parser/binding-android-arm-eabi": "npm:0.125.0"
+    "@oxc-parser/binding-android-arm64": "npm:0.125.0"
+    "@oxc-parser/binding-darwin-arm64": "npm:0.125.0"
+    "@oxc-parser/binding-darwin-x64": "npm:0.125.0"
+    "@oxc-parser/binding-freebsd-x64": "npm:0.125.0"
+    "@oxc-parser/binding-linux-arm-gnueabihf": "npm:0.125.0"
+    "@oxc-parser/binding-linux-arm-musleabihf": "npm:0.125.0"
+    "@oxc-parser/binding-linux-arm64-gnu": "npm:0.125.0"
+    "@oxc-parser/binding-linux-arm64-musl": "npm:0.125.0"
+    "@oxc-parser/binding-linux-ppc64-gnu": "npm:0.125.0"
+    "@oxc-parser/binding-linux-riscv64-gnu": "npm:0.125.0"
+    "@oxc-parser/binding-linux-riscv64-musl": "npm:0.125.0"
+    "@oxc-parser/binding-linux-s390x-gnu": "npm:0.125.0"
+    "@oxc-parser/binding-linux-x64-gnu": "npm:0.125.0"
+    "@oxc-parser/binding-linux-x64-musl": "npm:0.125.0"
+    "@oxc-parser/binding-openharmony-arm64": "npm:0.125.0"
+    "@oxc-parser/binding-wasm32-wasi": "npm:0.125.0"
+    "@oxc-parser/binding-win32-arm64-msvc": "npm:0.125.0"
+    "@oxc-parser/binding-win32-ia32-msvc": "npm:0.125.0"
+    "@oxc-parser/binding-win32-x64-msvc": "npm:0.125.0"
+    "@oxc-project/types": "npm:^0.125.0"
   dependenciesMeta:
+    "@oxc-parser/binding-android-arm-eabi":
+      optional: true
     "@oxc-parser/binding-android-arm64":
       optional: true
     "@oxc-parser/binding-darwin-arm64":
@@ -5175,7 +5261,11 @@ __metadata:
       optional: true
     "@oxc-parser/binding-linux-arm64-musl":
       optional: true
+    "@oxc-parser/binding-linux-ppc64-gnu":
+      optional: true
     "@oxc-parser/binding-linux-riscv64-gnu":
+      optional: true
+    "@oxc-parser/binding-linux-riscv64-musl":
       optional: true
     "@oxc-parser/binding-linux-s390x-gnu":
       optional: true
@@ -5183,13 +5273,17 @@ __metadata:
       optional: true
     "@oxc-parser/binding-linux-x64-musl":
       optional: true
+    "@oxc-parser/binding-openharmony-arm64":
+      optional: true
     "@oxc-parser/binding-wasm32-wasi":
       optional: true
     "@oxc-parser/binding-win32-arm64-msvc":
       optional: true
+    "@oxc-parser/binding-win32-ia32-msvc":
+      optional: true
     "@oxc-parser/binding-win32-x64-msvc":
       optional: true
-  checksum: 10c0/127dc25f1f8693c221230bf1f4b5912715494f9a7d43b3d38f03053eba18508c159c289aec8026b0093b34bad640098ac136f1627f29a8650b0c35e67a93fdd1
+  checksum: 10c0/0b5a94b15c43323a57005a953bebecb82d171a24a4474a330d248d76ae05cd0c36cd37d3a2542743ea8df3e6764ecc6505e91d2ceb53a3a8058163e44611503a
   languageName: node
   linkType: hard
 
@@ -5385,12 +5479,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.5.0, prettier@npm:^3.8.1":
+"prettier@npm:^3.5.0":
   version: 3.8.1
   resolution: "prettier@npm:3.8.1"
   bin:
     prettier: bin/prettier.cjs
   checksum: 10c0/33169b594009e48f570471271be7eac7cdcf88a209eed39ac3b8d6d78984039bfa9132f82b7e6ba3b06711f3bfe0222a62a1bfb87c43f50c25a83df1b78a2c42
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^3.8.4":
+  version: 3.8.4
+  resolution: "prettier@npm:3.8.4"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10c0/b90a0cbe75b88ac0af9c13fe0f359bd19926fabccd88483227b21f71f0c1cc42da056fc1ac3a361e665577c568371d5ccfb2c62c31c8a1186f8d1bd531a063e9
   languageName: node
   linkType: hard
 
@@ -5476,23 +5579,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^19.2.3":
-  version: 19.2.3
-  resolution: "react-dom@npm:19.2.3"
+"react-dom@npm:^19.2.7":
+  version: 19.2.7
+  resolution: "react-dom@npm:19.2.7"
   dependencies:
     scheduler: "npm:^0.27.0"
   peerDependencies:
-    react: ^19.2.3
-  checksum: 10c0/dc43f7ede06f46f3acc16ee83107c925530de9b91d1d0b3824583814746ff4c498ea64fd65cd83aba363205268adff52e2827c582634ae7b15069deaeabc4892
+    react: ^19.2.7
+  checksum: 10c0/970ff600f6e80d47d39e2f226f12f226173b3cba3382efc97c5f0cd663de9af38c7a4c11c213fb936094faeac83060d660247accaa96b752180d5b951b9cfecb
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.71.1":
-  version: 7.71.1
-  resolution: "react-hook-form@npm:7.71.1"
+"react-hook-form@npm:^7.79.0":
+  version: 7.79.0
+  resolution: "react-hook-form@npm:7.79.0"
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18 || ^19
-  checksum: 10c0/6c8fc0fa740d299481de3ed32bae98f7c6331240822c602363e5cd221746d875dc3c5e65d0039902b7f7a44dc9ac9a4932e00e9ad9af3051bed1987858ce78c7
+  checksum: 10c0/d34edf52766b911dd8c7f583ab7345bca60a352ae96cd8cb82e808e7875c36de21b2d4ee0afc40f693e1d98f0b3d6b47929cb873ca39d3b7b54a56cef6a5cb6d
   languageName: node
   linkType: hard
 
@@ -5579,10 +5682,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^19.2.3":
-  version: 19.2.3
-  resolution: "react@npm:19.2.3"
-  checksum: 10c0/094220b3ba3a76c1b668f972ace1dd15509b157aead1b40391d1c8e657e720c201d9719537375eff08f5e0514748c0319063392a6f000e31303aafc4471f1436
+"react@npm:^19.2.7":
+  version: 19.2.7
+  resolution: "react@npm:19.2.7"
+  checksum: 10c0/0bd0e2f1bbd4ba97561c6597bf8a5fec05e6476fe61e165c1065598d16668efc6715205599c94d3ddd49d36cb0f21cbf1b9bcc18ee840b805ce222c3e8d558ac
   languageName: node
   linkType: hard
 
