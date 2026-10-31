@@ -12,8 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as protectedLayoutRouteImport } from './routes/(protected)/_layout'
 import { Route as protectedLayoutIndexRouteImport } from './routes/(protected)/_layout/index'
-import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as protectedLayoutBrowseRouteImport } from './routes/(protected)/_layout/browse'
+import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
@@ -29,15 +29,15 @@ const protectedLayoutIndexRoute = protectedLayoutIndexRouteImport.update({
   path: '/',
   getParentRoute: () => protectedLayoutRoute,
 } as any)
-const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
-  id: '/api/auth/$',
-  path: '/api/auth/$',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const protectedLayoutBrowseRoute = protectedLayoutBrowseRouteImport.update({
   id: '/browse',
   path: '/browse',
   getParentRoute: () => protectedLayoutRoute,
+} as any)
+const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
+  id: '/api/auth/$',
+  path: '/api/auth/$',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -103,19 +103,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof protectedLayoutIndexRouteImport
       parentRoute: typeof protectedLayoutRoute
     }
-    '/api/auth/$': {
-      id: '/api/auth/$'
-      path: '/api/auth/$'
-      fullPath: '/api/auth/$'
-      preLoaderRoute: typeof ApiAuthSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/(protected)/_layout/browse': {
       id: '/(protected)/_layout/browse'
       path: '/browse'
       fullPath: '/browse'
       preLoaderRoute: typeof protectedLayoutBrowseRouteImport
       parentRoute: typeof protectedLayoutRoute
+    }
+    '/api/auth/$': {
+      id: '/api/auth/$'
+      path: '/api/auth/$'
+      fullPath: '/api/auth/$'
+      preLoaderRoute: typeof ApiAuthSplatRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
