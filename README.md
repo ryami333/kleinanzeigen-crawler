@@ -52,6 +52,7 @@ genuinely new listings discovered after that point trigger an email.
 - An **OpenID Connect (OAuth) provider** to gate the web UI. This project is built
   against [Pocket ID](https://github.com/pocket-id/pocket-id), but any OIDC-compatible
   provider configured through [Better Auth](https://www.better-auth.com/) should work.
+  Register `<BASE_URL>/api/auth/callback/pocket-id` as the client's callback URL.
 
 ## Configuration
 
