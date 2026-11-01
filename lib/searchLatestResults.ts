@@ -12,6 +12,13 @@ export const searchLatestResults = async ({ query }: { query: string }) => {
     if (result.status !== 200) {
       throw new Error("Response not OK");
     }
+    /**
+     * Redirects are followed, so make sure we didn't end up somewhere other
+     * than Kleinanzeigen before trusting the response body.
+     */
+    if (new URL(result.url).hostname !== "www.kleinanzeigen.de") {
+      throw new Error(`Unexpected response host: ${result.url}`);
+    }
     return result.text();
   });
 
@@ -66,10 +73,10 @@ export const searchLatestResults = async ({ query }: { query: string }) => {
       heading: linkElement?.textContent.trim(),
       description: adElement
         .querySelector(".aditem-main--middle p")
-        ?.innerHTML.trim(),
+        ?.textContent.trim(),
       price: adElement
         .querySelector(".aditem-main--middle--price-shipping--price")
-        ?.innerHTML.trim(),
+        ?.textContent.trim(),
       markup: adElement.outerHTML,
     };
   });
