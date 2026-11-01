@@ -61,7 +61,7 @@ jobs:
             type=raw,value=latest
 
       - name: 💾 Restore Buildx cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: /tmp/.buildx-cache
           key: buildx-${{ github.ref }}-${{ github.sha }}
