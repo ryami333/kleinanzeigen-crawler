@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out git
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Enable Corepack
         run: corepack enable
       - name: Setup node
