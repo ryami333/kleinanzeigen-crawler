@@ -1,1 +1,13 @@
 node_modules
+secrets
+.env
+.env.*
+!.env.example
+data
+auth.sqlite
+.git
+.github
+.claude
+.output
+.tanstack
+*.tsbuildinfo
