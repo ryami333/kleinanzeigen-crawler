@@ -1,7 +1,7 @@
 services:
   valkey:
     ports:
-      - "6379:6379"
+      - "127.0.0.1:6379:6379"
   worker:
     command: node ./lib/worker.ts --watch
     volumes:
@@ -11,7 +11,7 @@ services:
     volumes:
       - ./src:/app/src
     ports:
-      - "3000:3000"
+      - "127.0.0.1:3000:3000"
   mongodb:
     ports:
-      - "27017:27017"
+      - "127.0.0.1:27017:27017"
