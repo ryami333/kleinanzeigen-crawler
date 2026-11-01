@@ -8,6 +8,7 @@ import path from "node:path";
 import { env } from "./worker-env.ts";
 import type { QueryDocument } from "../src/helpers/querySchema.ts";
 import { client, db } from "./db.ts";
+import { escapeHtml } from "./escapeHtml.ts";
 
 /**
  * -----------------------------------------------------------------------------
@@ -113,7 +114,7 @@ const crawlerQueue = getCrawlerQueue({ hostname: "valkey" });
   notificationQueue.add({
     to: env.NODEMAILER_TO_ADDRESS,
     subject: "Kleinanzeigen Crawler is live",
-    html: `<p>Crawler started at ${new Date().toLocaleString()}</p><ul>${queries.map((query) => `<li>${query.value}</li>`).join("")}</ul>`,
+    html: `<p>Crawler started at ${new Date().toLocaleString()}</p><ul>${queries.map((query) => `<li>${escapeHtml(query.value)}</li>`).join("")}</ul>`,
   });
 }
 

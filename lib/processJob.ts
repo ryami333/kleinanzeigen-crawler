@@ -6,6 +6,7 @@ import { searchLatestResults } from "./searchLatestResults.ts";
 import { env } from "./worker-env.ts";
 import type { QueryDocument } from "../src/helpers/querySchema.ts";
 import { db } from "./db.ts";
+import { escapeHtml } from "./escapeHtml.ts";
 
 export const processJob = async function (
   job: Job<{ sendNotifications: boolean }>,
@@ -46,10 +47,10 @@ export const processJob = async function (
                 subject: `New search result for ${JSON.stringify(query.value)} – ${JSON.stringify(result.heading)}`,
                 html: [
                   `<p>New search result found:</p>`,
-                  `<p><strong><em>${result.heading}</strong></em></p>`,
-                  `<p>${result.description}</p>`,
-                  `<p>${result.price}</p>`,
-                  `<p>Click <a href="${url.toString()}">here</a> to see the listing.</p>`,
+                  `<p><strong><em>${escapeHtml(result.heading)}</em></strong></p>`,
+                  `<p>${escapeHtml(result.description)}</p>`,
+                  `<p>${escapeHtml(result.price)}</p>`,
+                  `<p>Click <a href="${escapeHtml(url.toString())}">here</a> to see the listing.</p>`,
                 ].join("\n"),
               });
             }
